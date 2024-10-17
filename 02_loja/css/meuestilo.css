@@ -1,0 +1,17 @@
+/* fundo da parte chamada flores */
+.fundo{
+    background-color: #f288af;
+}
+/* cor para os icones de promoção */
+.sale{
+    background-color:#bf3b6c ;
+}
+/* altera a cor das opcoes : add ao carrinho e opções */
+.btn-outline-custom {
+    border-color: #f288af; /* Altere para a cor desejada */
+    color: #f288af; /* Altere para a cor desejada */
+}
+.btn-outline-custom:hover {
+    background-color: #bf3b6c; /* Altere para a cor desejada ao passar o mouse */
+    color: white; /* Cor do texto quando ativo */
+}
