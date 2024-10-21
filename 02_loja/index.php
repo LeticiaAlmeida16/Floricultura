@@ -1,3 +1,7 @@
+<?php
+    include 'C:\xampp\htdocs\Floricultura/banco_de_dados/conecta.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>

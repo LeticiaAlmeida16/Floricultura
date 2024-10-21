@@ -6,10 +6,11 @@ $senha = "";
 
 $conexao = new mysqli($servidor,$usuario,$senha,$database);
 
-if(mysqli_connect_errno()){
-    echo "ERRO DE CONEXÃO";
-}
-else{
-    echo "CONECTANDO AO BANCO COM SUCESSO!";
-}
-?>
+// Teste de conexão
+// if(mysqli_connect_errno()){
+//     echo "ERRO DE CONEXÃO";
+// }
+// else{
+//     echo "CONECTANDO AO BANCO COM SUCESSO!";
+// }
+// ?>
