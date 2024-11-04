@@ -62,7 +62,7 @@ CREATE TABLE `cadastro_vendedor` (
   `telefone_vendedor` int(11) DEFAULT NULL,
   `nome_vendedor` varchar(128) DEFAULT NULL,
   `email_vendedor` varchar(128) DEFAULT NULL,
-  `senha_vededor` varchar(64) DEFAULT NULL
+  `senha_vendedor` varchar(64) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- --------------------------------------------------------
