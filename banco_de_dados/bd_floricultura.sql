@@ -30,9 +30,9 @@ USE `bd_floricultura`;
 --
 
 CREATE TABLE `cadastro_adm` (
-  `telefone_adm` int(11) DEFAULT NULL,
+  `telefone_adm` varchar(14) DEFAULT NULL,
   `email_adm` varchar(128) DEFAULT NULL,
-  `cpf_adm` int(11) NOT NULL,
+  `cpf_adm` varchar(14) NOT NULL,
   `nome_adm` varchar(128) DEFAULT NULL,
   `senha_adm` varchar(64) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
@@ -44,8 +44,8 @@ CREATE TABLE `cadastro_adm` (
 --
 
 CREATE TABLE `cadastro_cliente` (
-  `cpf_cliente` int(11) NOT NULL,
-  `telefone_cliente` int(11) DEFAULT NULL,
+  `cpf_cliente` varchar(14) NOT NULL,
+  `telefone_cliente` varchar(14) DEFAULT NULL,
   `nome_cliente` varchar(128) DEFAULT NULL,
   `email_cliente` varchar(128) DEFAULT NULL,
   `senha_cliente` varchar(64) DEFAULT NULL
@@ -58,8 +58,8 @@ CREATE TABLE `cadastro_cliente` (
 --
 
 CREATE TABLE `cadastro_vendedor` (
-  `cpf_vendedor` int(11) NOT NULL,
-  `telefone_vendedor` int(11) DEFAULT NULL,
+  `cpf_vendedor` varchar(14) NOT NULL,
+  `telefone_vendedor` varchar(14) DEFAULT NULL,
   `nome_vendedor` varchar(128) DEFAULT NULL,
   `email_vendedor` varchar(128) DEFAULT NULL,
   `senha_vendedor` varchar(64) DEFAULT NULL
@@ -108,9 +108,9 @@ CREATE TABLE `estoque_flores` (
 --
 
 CREATE TABLE `pedidos` (
-  `fk_cadastro_cliente_cpf_cliente` int(11) DEFAULT NULL,
+  `fk_cadastro_cliente_cpf_cliente` varchar(14) DEFAULT NULL,
   `fk_estoque_flores_id_flor` int(11) DEFAULT NULL,
-  `fk_cadastro_vendedor_cpf_vendedor` int(11) DEFAULT NULL
+  `fk_cadastro_vendedor_cpf_vendedor` varchar(14) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
@@ -287,12 +287,12 @@ INSERT INTO estoque_flores (id_flor, nome_flor, quantidade_flor, preco_flor) VAL
 INSERT INTO estoque_flores (id_flor, nome_flor, quantidade_flor, preco_flor) VALUES (99, 'Flor de Monstera', 9, 4.50);
 INSERT INTO estoque_flores (id_flor, nome_flor, quantidade_flor, preco_flor) VALUES (100, 'Flor de Tigridia', 12, 3.60);
 
-INSERT INTO cadastro_vendedor (cpf_vendedor, telefone_vendedor, nome_vendedor, email_vendedor, senha_vendedor) VALUES (45825615609, 11915672033, 'Pigmeu Garcia', 'pigmeu.garcia@email.com', 'senha123');
-INSERT INTO cadastro_vendedor (cpf_vendedor, telefone_vendedor, nome_vendedor, email_vendedor, senha_vendedor) VALUES (12470121869, 11919122207, 'França Bardella', 'franca.bardella@email.com', 'senha456');
-INSERT INTO cadastro_vendedor (cpf_vendedor, telefone_vendedor, nome_vendedor, email_vendedor, senha_vendedor) VALUES (42756681213, 11999712510, 'Filha do Hoender Rodrigues', 'hoender.rodrigues@email.com', 'senha789');
-INSERT INTO cadastro_vendedor (cpf_vendedor, telefone_vendedor, nome_vendedor, email_vendedor, senha_vendedor) VALUES (46290347596, 11956230789, 'Bolivia Gama', 'bolivia.gama@email.com', 'senha321');
+INSERT INTO cadastro_vendedor (cpf_vendedor, telefone_vendedor, nome_vendedor, email_vendedor, senha_vendedor) VALUES ('458.256.156-09', '(11)91567-2033', 'Pigmeu Garcia', 'pigmeu.garcia@email.com', 'senha123');
+INSERT INTO cadastro_vendedor (cpf_vendedor, telefone_vendedor, nome_vendedor, email_vendedor, senha_vendedor) VALUES ('124.701.218-69', '(11)91912-2207', 'França Bardella', 'franca.bardella@email.com', 'senha456');
+INSERT INTO cadastro_vendedor (cpf_vendedor, telefone_vendedor, nome_vendedor, email_vendedor, senha_vendedor) VALUES ('427.566.812-13', '(11)99971-2510', 'Filha do Hoender Rodrigues', 'hoender.rodrigues@email.com', 'senha789');
+INSERT INTO cadastro_vendedor (cpf_vendedor, telefone_vendedor, nome_vendedor, email_vendedor, senha_vendedor) VALUES ('462.903.475-96', '(11)95623-0789', 'Bolivia Gama', 'bolivia.gama@email.com', 'senha321');
 
-INSERT INTO cadastro_adm (telefone_adm, email_adm, cpf_adm, nome_adm, senha_adm) VALUES (11952439006, 'chefe.aumeidan@email.com', 52916012800, 'Chefe Aumeidan', 'senhaAdmChefe');
+INSERT INTO cadastro_adm (telefone_adm, email_adm, cpf_adm, nome_adm, senha_adm) VALUES ('(11)95243-9006', 'chefe.aumeidan@email.com', '529.160.128-00', 'Chefe Aumeidan', 'senhaAdmChefe');
 
 INSERT INTO desconto (id_desconto, valor_desconto) VALUES (1, 5);
 INSERT INTO desconto (id_desconto, valor_desconto) VALUES (2, 10);
