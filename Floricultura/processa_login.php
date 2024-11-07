@@ -7,8 +7,8 @@
     require('../banco_de_dados/conecta.php');
 
     //vem do login.html
-    $email = $_POST['email_vendedor'];
-    $senha = $_POST['senha_vendedor'];
+    $email = $_POST['email'];
+    $senha = $_POST['senha'];
 
 
     $consulta = "SELECT * FROM cadastro_vendedor WHERE email_vendedor = '$email' AND senha_vendedor = '$senha'";
