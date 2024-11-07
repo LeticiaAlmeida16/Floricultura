@@ -463,10 +463,10 @@
             <div class="row g-4 justify-content-center">
                 <div class="col-md-6 col-lg-4">
                     <a href="#">
-                        <div class="service-item bg-secondary rounded border border-secondary">
+                        <div class="service-item bg-primary rounded border border-primary">
                             <img src="imgs/cesta.jpg" class="img-fluid rounded-top w-100" alt="">
                             <div class="px-4 rounded-bottom">
-                                <div class="service-content bg-primary text-center p-4 rounded">
+                                <div class="service-content bg-secondary text-center p-4 rounded">
                                     <h5 class="text-white">Rosas Frescas</h5>
                                     <h3 class="mb-0">20% OFF</h3>
                                 </div>
@@ -476,11 +476,11 @@
                 </div>
                 <div class="col-md-6 col-lg-4">
                     <a href="#">
-                        <div class="service-item bg-dark rounded border border-dark">
+                        <div class="service-item bg-primary rounded border border-primary">
                             <img src="imgs/outubro.jpg" class="img-fluid rounded-top w-100" alt="">
                             <div class="px-4 rounded-bottom">
-                                <div class="service-content bg-light text-center p-4 rounded">
-                                    <h5 class="text-primary">Flores Coloridas</h5>
+                                <div class="service-content bg-secondary text-center p-4 rounded">
+                                    <h5 class="text-white">Flores Coloridas</h5>
                                     <h3 class="mb-0">Entrega Grátis</h3>
                                 </div>
                             </div>
