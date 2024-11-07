@@ -103,36 +103,14 @@
             <div class="tab-class text-center">
                 <div class="row g-4">
                     <div class="col-lg-4 text-start">
-                        <h1>Nossos Produtos Florais</h1>
+                        <h1>Nossos produtos mais vendidos</h1>
                     </div>
                     <div class="col-lg-8 text-end">
                         <ul class="nav nav-pills d-inline-flex text-center mb-5">
                             <li class="nav-item">
-                                <a class="d-flex m-2 py-2 bg-light rounded-pill active" data-bs-toggle="pill"
-                                    href="#tab-1">
+                                <a class="d-flex m-2 py-2 bg-light rounded-pill active" href="shop.php">
                                     <span class="text-dark" style="width: 130px;">Todos os Produtos</span>
                                 </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="d-flex py-2 m-2 bg-light rounded-pill" data-bs-toggle="pill" href="#tab-2">
-                                    <span class="text-dark" style="width: 130px;">Flores</span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="d-flex m-2 py-2 bg-light rounded-pill" data-bs-toggle="pill" href="#tab-3">
-                                    <span class="text-dark" style="width: 130px;">Arranjos</span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="d-flex m-2 py-2 bg-light rounded-pill" data-bs-toggle="pill" href="#tab-4">
-                                    <span class="text-dark" style="width: 130px;">Plantas</span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="d-flex m-2 py-2 bg-light rounded-pill" data-bs-toggle="pill" href="#tab-5">
-                                    <span class="text-dark" style="width: 130px;">Vasos e Acessórios</span>
-                                </a>
-                            </li>
                         </ul>
                     </div>
                 </div>
@@ -168,6 +146,15 @@
                                     </div>
                                 </div>
                             </div>";
+                                        echo "<style>
+                                        .fruite-img img {
+                                        width: 100%;
+                                        height: 300px;
+                                        object-fit: cover;
+                                        border-radius: 8px 8px 0 0;
+                                        }
+                                        </style>";
+                            
                                         }  
                                     ?> 
                                 </div>
