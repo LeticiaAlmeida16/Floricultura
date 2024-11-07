@@ -2,7 +2,7 @@
     include 'C:\xampp\htdocs\Floricultura/banco_de_dados/conecta.php';
     include 'menu.php';
 ?>
-    <!-- Modal Search Start -->
+    <!-- Modal Search Start teste -->
     <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-fullscreen">
             <div class="modal-content rounded-0">
