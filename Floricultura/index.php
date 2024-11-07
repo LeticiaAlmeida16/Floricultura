@@ -171,7 +171,7 @@
                                      <!-- inicio card -->
 
                                     <?php
-                                        $sql = "SELECT * FROM estoque_flores";
+                                        $sql = "SELECT * FROM estoque_flores LIMIT 10";
                                         $consulta = $conexao->query($sql); 
                                         while($dados = $consulta->fetch_assoc()){
 
