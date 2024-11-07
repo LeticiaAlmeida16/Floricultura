@@ -55,16 +55,8 @@
                     <div class="navbar-nav mx-auto">
                         <a href="index.php" class="nav-item nav-link active">Início</a>
                         <a href="shop.php" class="nav-item nav-link">Loja</a>
-                        <a href="shop-detail.php" class="nav-item nav-link">Detalhes da Loja</a>
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Páginas</a>
-                            <div class="dropdown-menu m-0 bg-secondary rounded-0">
-                                <a href="cart.php" class="dropdown-item">Carrinho</a>
-                                <a href="checkout.php" class="dropdown-item">Finalizar Compra</a>
-                                <a href="testimonial.php" class="dropdown-item">Depoimentos</a>
-                                <a href="404.php" class="dropdown-item">Página 404</a>
-                            </div>
-                        </div>
+                        <a href="cart.php" class="nav-item nav-link">Carrinho</a>
+                        <a href="testimonial.php" class="nav-item nav-link">Depoimentos</a>
                         <a href="contact.php" class="nav-item nav-link">Contato</a>
                     </div>
                     <div class="d-flex m-3 me-0">

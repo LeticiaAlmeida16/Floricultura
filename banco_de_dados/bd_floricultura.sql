@@ -20,7 +20,7 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `bd_floricultura`
 --
-CREATE DATABASE IF NOT EXISTS `bd_floricultura` DEFAULT CHARACTER SET latin1 COLLATE utf8_general_ci;
+CREATE DATABASE IF NOT EXISTS `bd_floricultura` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 USE `bd_floricultura`;
 
 -- --------------------------------------------------------
@@ -35,7 +35,7 @@ CREATE TABLE `cadastro_adm` (
   `cpf_adm` varchar(14) NOT NULL,
   `nome_adm` varchar(128) DEFAULT NULL,
   `senha_adm` varchar(64) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -49,7 +49,7 @@ CREATE TABLE `cadastro_cliente` (
   `nome_cliente` varchar(128) DEFAULT NULL,
   `email_cliente` varchar(128) DEFAULT NULL,
   `senha_cliente` varchar(64) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -63,7 +63,7 @@ CREATE TABLE `cadastro_vendedor` (
   `nome_vendedor` varchar(128) DEFAULT NULL,
   `email_vendedor` varchar(128) DEFAULT NULL,
   `senha_vendedor` varchar(64) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -74,7 +74,7 @@ CREATE TABLE `cadastro_vendedor` (
 CREATE TABLE `desconto` (
   `id_desconto` int(11) NOT NULL,
   `valor_desconto` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -85,7 +85,7 @@ CREATE TABLE `desconto` (
 CREATE TABLE `desconto_flor` (
   `fk_desconto_id_desconto` int(11) DEFAULT NULL,
   `fk_estoque_flores_id_flor` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -99,7 +99,7 @@ CREATE TABLE `estoque_flores` (
   `quantidade_flor` int(11) DEFAULT NULL,
   `preco_flor` float DEFAULT NULL,
   `imagem_flor` varchar(100) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -111,7 +111,7 @@ CREATE TABLE `pedidos` (
   `fk_cadastro_cliente_cpf_cliente` varchar(14) DEFAULT NULL,
   `fk_estoque_flores_id_flor` int(11) DEFAULT NULL,
   `fk_cadastro_vendedor_cpf_vendedor` varchar(14) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Índices para tabelas despejadas
