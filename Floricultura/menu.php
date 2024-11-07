@@ -54,7 +54,7 @@
                 <div class="collapse navbar-collapse bg-white" id="navbarCollapse">
                     <div class="navbar-nav mx-auto">
                         <a href="index.php" class="nav-item nav-link active">Início</a>
-                        <a href="shop.php" class="nav-item nav-link">Loja</a>
+                        <a href="shop.php" class="nav-item nav-link">Produtos</a>
                         <a href="cart.php" class="nav-item nav-link">Carrinho</a>
                         <a href="testimonial.php" class="nav-item nav-link">Depoimentos</a>
                         <a href="contact.php" class="nav-item nav-link">Contato</a>
@@ -66,7 +66,7 @@
                                 class="position-absolute bg-secondary rounded-circle d-flex align-items-center justify-content-center text-dark px-1"
                                 style="top: -5px; left: 15px; height: 20px; min-width: 20px;">3</span>
                         </a>
-                        <a href="checkout.php" class="my-auto">
+                        <a href="" class="my-auto">
                             <i class="fas fa-user fa-2x"></i>
                         </a>
                     </div>
