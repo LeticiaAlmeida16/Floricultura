@@ -20,7 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `bd_floricultura`
 --
-
+CREATE DATABASE IF NOT EXISTS `bd_floricultura` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `bd_floricultura`;
 -- --------------------------------------------------------
 
 --
