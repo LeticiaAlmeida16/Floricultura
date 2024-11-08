@@ -1,5 +1,5 @@
 <?php
-
+    // Falta a parte de adm
     // Inicia a sessão para armazenar dados temporários do usuário
     session_start();
 
