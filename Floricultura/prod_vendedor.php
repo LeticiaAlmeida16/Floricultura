@@ -1,67 +1,8 @@
 <?php
     include 'C:\xampp\htdocs\Floricultura/banco_de_dados/conecta.php';
+    include 'menu.php';
 ?>
-<!DOCTYPE html>
-    <html lang="PT-BR">
 
-    <head>
-        <meta charset="utf-8">
-        <title>Luxe Blooms</title>
-        <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        <meta content="" name="keywords">
-        <meta content="" name="description">
-
-        <!-- Google Web Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link
-            href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Raleway:wght@600;800&display=swap"
-            rel="stylesheet">
-
-        <!-- Icon Font Stylesheet -->
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-
-        <!-- Libraries Stylesheet -->
-        <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-
-
-        <!-- Customized Bootstrap Stylesheet -->
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-
-        <!-- Template Stylesheet -->
-        <link href="css/style.css" rel="stylesheet">
-    </head>
-
-    <body>
-
-        <!-- Spinner Start -->
-        <div id="spinner"
-            class="show w-100 vh-100 bg-white position-fixed translate-middle top-50 start-50  d-flex align-items-center justify-content-center">
-            <div class="spinner-grow text-primary" role="status"></div>
-        </div>
-        <!-- Spinner End -->
-
-        <!-- Navbar start -->
-        <div class="container-fluid fixed-top">
-            <div class="container px-0">
-                <nav class="navbar navbar-light bg-white navbar-expand-xl">
-                    <a href="index.html" class="navbar-brand">
-                        <h1 class="text-primary display-6">Luxe Blooms</h1>
-                    </a>
-                    <div class="collapse navbar-collapse bg-white" id="navbarCollapse">
-                        <div class="d-flex m-3 me-0">
-                            <a href="Login_v1/index.html" class="position-relative me-4 my-auto">
-                                <i class=""></i>Voltar
-    
-                            </a>
-                        </div>
-                    </div>
-                </nav>
-            </div>
-        </div>
-        <!-- Navbar End -->
 
         <!-- Single Page Header start -->
         <div class="container-fluid page-header py-5">
@@ -91,12 +32,12 @@
                                 $consulta = $conexao->query($sql); 
                                 while($dados = $consulta->fetch_assoc()){
 
-                                    echo "<div class='col-md-6 col-lg-6 col-xl-4'> <!-- Ajuste nas classes Bootstrap --> 
-                                            <div class='rounded position-relative fruite-item' style='width: 100%; max-width: 350px;'> <!-- Largura máxima para o card -->
+                                    echo "<div class='col-12 col-sm-6 col-lg-3'> <!-- Ajuste nas classes Bootstrap --> 
+                                            <div class='rounded position-relative fruite-item' style='width: 100%;'>
                                                 <div class='fruite-img'>";                                        
                                     echo "<img src='".$dados['imagem_flor']."' class='img-fluid w-100 rounded-top' alt=''>";
                                     echo "</div>";
-                                    echo "<div class='text-white bg-secondary px-3 py-1 rounded position-absolute' style='top: 10px; left: 10px;'>Buquê</div>";
+                                    // echo "<div class='text-white bg-secondary px-3 py-1 rounded position-absolute' style='top: 10px; left: 10px;'>Buquê</div>";
                                     echo "<div class='p-4 border border-secondary border-top-0 rounded-bottom'>
                                             <h4>".$dados['nome_flor']."</h4>";
                                     echo "<div class='d-flex justify-content-between flex-lg-wrap'>
@@ -105,22 +46,11 @@
                                             class='btn border border-secondary rounded-pill px-3 text-primary'><i
                                             class='fa fa-shopping-bag me-2 text-primary'></i> Add to
                                             cart</a>
-                                            <a href='cadastro/edita_flor.php?id=".$dados['id_flor']."'
-                                            class='btn border border-secondary rounded-pill px-3 text-primary'><i
-                                            class='text-primary'></i> Editar</a>
-                                            <a onClick='return apagar()' href='proc_apaga_flor.php?id=".$dados['id_flor']."'
-                                            class='btn border border-secondary rounded-pill px-3 text-primary'><i
-                                            class='text-primary'></i> Apagar</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                </div>";
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>";
                                     echo "<style>
-                                    .fruite-item {
-                                        max-width: 100%; /* Garante que o card ocupe o espaço definido */
-                                        padding: 15px;
-                                        margin: auto;
-                                    }
                                     .fruite-img img {
                                         width: 100%;
                                         height: 300px;
@@ -130,7 +60,7 @@
                                     </style>";
 
                                 }  
-?>  
+                                ?>   
                                 </div>
                             </div>
                         </div>
