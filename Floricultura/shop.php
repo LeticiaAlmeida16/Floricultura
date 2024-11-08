@@ -19,21 +19,21 @@
                         <div class="row g-4">
                             
                         </div>
-                        <div class="row g-4">
+                        <div class="row g-4 justify-content-around">
                             <div class="col-lg-9">
-                                <div class="row g-4 justify-content-center">
+                                <div class="row g-4 justify-content-around">
                                     
                                 <?php
                                 $sql = "SELECT * FROM estoque_flores";
                                 $consulta = $conexao->query($sql); 
                                 while($dados = $consulta->fetch_assoc()){
 
-                                    echo "<div class='col-md-6 col-lg-6 col-xl-4'> <!-- Ajuste nas classes Bootstrap --> 
-                                            <div class='rounded position-relative fruite-item' style='width: 100%; max-width: 350px;'> <!-- Largura máxima para o card -->
+                                    echo "<div class='col-12 col-sm-6 col-lg-3'> <!-- Ajuste nas classes Bootstrap --> 
+                                            <div class='rounded position-relative fruite-item' style='width: 100%;'>
                                                 <div class='fruite-img'>";                                        
                                     echo "<img src='".$dados['imagem_flor']."' class='img-fluid w-100 rounded-top' alt=''>";
                                     echo "</div>";
-                                    echo "<div class='text-white bg-secondary px-3 py-1 rounded position-absolute' style='top: 10px; left: 10px;'>Buquê</div>";
+                                    // echo "<div class='text-white bg-secondary px-3 py-1 rounded position-absolute' style='top: 10px; left: 10px;'>Buquê</div>";
                                     echo "<div class='p-4 border border-secondary border-top-0 rounded-bottom'>
                                             <h4>".$dados['nome_flor']."</h4>";
                                     echo "<div class='d-flex justify-content-between flex-lg-wrap'>
@@ -42,16 +42,11 @@
                                             class='btn border border-secondary rounded-pill px-3 text-primary'><i
                                             class='fa fa-shopping-bag me-2 text-primary'></i> Add to
                                             cart</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                </div>";
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>";
                                     echo "<style>
-                                    .fruite-item {
-                                        max-width: 100%; /* Garante que o card ocupe o espaço definido */
-                                        padding: 15px;
-                                        margin: auto;
-                                    }
                                     .fruite-img img {
                                         width: 100%;
                                         height: 300px;
@@ -61,12 +56,7 @@
                                     </style>";
 
                                 }  
-?>
-
-                                    
-
-                                        //var_dump($dados['imagem_flor']);                                        
-                                    ?>    
+                                ?>  
                                 </div>
                             </div>
                         </div>

@@ -21,27 +21,26 @@
     $isCliente = $resultado_cliente->num_rows === 1; // Retorna verdadeiro se o usuário é um cliente
 
     if ($isVendedor) {
-        // Usuário é um vendedor
         $dados_vendedor = mysqli_fetch_assoc($resultado_vendedor);
-        $_SESSION['id'] = $dados_vendedor['id'];
-        $_SESSION['nome'] = $dados_vendedor['nome'];
-        $_SESSION['email'] = $dados_vendedor['email'];
+        $_SESSION['cpf'] = $dados_vendedor['cpf_vendedor'];
+        $_SESSION['nome'] = $dados_vendedor['nome_vendedor'];
+        $_SESSION['email'] = $dados_vendedor['email_vendedor'];
         $_SESSION['tipo'] = 'vendedor';
-
-        // Redireciona para o painel do vendedor
+        
+        // Teste: Verifique se a sessão está definida antes de redirecionar
+        echo "Usuário Vendedor Logado: " . $_SESSION['nome'];
+        exit(); // Remova o `exit()` depois de testar
+        
         header('Location: prod_vendedor.php');
     } elseif ($isCliente) {
-        // Usuário é um cliente
         $dados_cliente = mysqli_fetch_assoc($resultado_cliente);
-        $_SESSION['id'] = $dados_cliente['id'];
-        $_SESSION['nome'] = $dados_cliente['nome'];
-        $_SESSION['email'] = $dados_cliente['email'];
+        $_SESSION['cpf'] = $dados_cliente['cpf_cliente'];
+        $_SESSION['nome'] = $dados_cliente['nome_cliente'];
+        $_SESSION['email'] = $dados_cliente['email_cliente'];
         $_SESSION['tipo'] = 'cliente';
 
-        // Redireciona para a página inicial do cliente
+        
         header('Location: index.php');
-    } else {
-        // Login falhou, redireciona para a página de login novamente
-        header('Location: Login_v1/index.html');
     }
+    
 ?>

@@ -44,7 +44,7 @@
     <div class="container-fluid fixed-top">
         <div class="container px-0">
             <nav class="navbar navbar-light bg-white navbar-expand-xl">
-                <a href="index.html" class="navbar-brand">
+                <a href="index.php" class="navbar-brand">
                     <h1 class="text-primary display-6">Luxes Blooms</h1>
                 </a>
                 <button class="navbar-toggler py-2 px-3" type="button" data-bs-toggle="collapse"
@@ -59,17 +59,21 @@
                         <a href="testimonial.php" class="nav-item nav-link">Depoimentos</a>
                         <a href="contact.php" class="nav-item nav-link">Contato</a>
                     </div>
-                    <div class="d-flex m-3 me-0">
-                        <a href="cart.php" class="position-relative me-4 my-auto">
-                            <i class="fa fa-shopping-bag fa-2x"></i>
-                            <span
-                                class="position-absolute bg-secondary rounded-circle d-flex align-items-center justify-content-center text-dark px-1"
-                                style="top: -5px; left: 15px; height: 20px; min-width: 20px;">3</span>
-                        </a>
-                        <a href="" class="my-auto">
-                            <i class="fas fa-user fa-2x"></i>
-                        </a>
-                    </div>
+                    <?php session_start() ?>
+                    
+                        <div class="d-flex m-3 me-0">
+                            <a href="cart.php" class="position-relative me-4 my-auto">
+                                <i class="fa fa-shopping-bag fa-2x"></i>
+                                <span class="position-absolute bg-secondary rounded-circle d-flex align-items-center justify-content-center text-dark px-1" style="top: -5px; left: 15px; height: 20px; min-width: 20px;">3</span>
+                            </a>
+                            <?php if (isset($_SESSION['nome_cliente'])): ?>
+                                <span class="my-auto text-primary fw-bold">Olá, <?php echo htmlspecialchars($_SESSION['nome_cliente']); ?></span>
+                            <?php else: ?>
+                                <a href="Login_v1" class="my-auto">
+                                    <i class="fas fa-user fa-2x"></i>
+                                </a>
+                            <?php endif; ?>
+                        </div>
                 </div>
             </nav>
         </div>
