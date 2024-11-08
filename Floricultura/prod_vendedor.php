@@ -48,7 +48,7 @@
             <div class="container px-0">
                 <nav class="navbar navbar-light bg-white navbar-expand-xl">
                     <a href="index.html" class="navbar-brand">
-                        <h1 class="text-primary display-6">Luxes Blooms</h1>
+                        <h1 class="text-primary display-6">Luxe Blooms</h1>
                     </a>
                     <div class="collapse navbar-collapse bg-white" id="navbarCollapse">
                         <div class="d-flex m-3 me-0">
@@ -72,8 +72,8 @@
 
         <!-- Fruits Shop Start-->
         <div class="container-fluid fruite py-5">
-        <a href='#' class='btn border border-secondary rounded-pill px-3 text-primary'>
-                <i class='text-primary'></i> Adicionar
+        <a href='cadastro/insere_flor.php' class='btn border border-secondary rounded-pill px-3 text-primary'>
+                <i class='text-primary'></i> Inserir
             </a>
             <div class="container py-5">
             
@@ -105,10 +105,10 @@
                                             class='btn border border-secondary rounded-pill px-3 text-primary'><i
                                             class='fa fa-shopping-bag me-2 text-primary'></i> Add to
                                             cart</a>
-                                            <a href='#'
+                                            <a href='cadastro/edita_flor.php?id=".$dados['id_flor']."'
                                             class='btn border border-secondary rounded-pill px-3 text-primary'><i
                                             class='text-primary'></i> Editar</a>
-                                            <a href='#'
+                                            <a onClick='return apagar()' href='proc_apaga_flor.php?id=".$dados['id_flor']."'
                                             class='btn border border-secondary rounded-pill px-3 text-primary'><i
                                             class='text-primary'></i> Apagar</a>
                                         </div>
@@ -130,12 +130,7 @@
                                     </style>";
 
                                 }  
-?>
-
-                                    
-
-                                        //var_dump($dados['imagem_flor']);                                        
-                                    ?>    
+?>  
                                 </div>
                             </div>
                         </div>
@@ -184,6 +179,12 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    <script>
+        //funcao para mensagem de seguranca
+            function apagar() {
+                return confirm("Tem certeza que deseja apagar a flor?")
+            }
+        </script>
     </body>
 
 </html>
