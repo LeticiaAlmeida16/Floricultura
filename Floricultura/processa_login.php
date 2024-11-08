@@ -29,7 +29,7 @@
         $_SESSION['tipo'] = 'vendedor';
 
         // Redireciona para o painel do vendedor
-        header('Location: vendedorTeste.php');
+        header('Location: prod_vendedor.php');
     } elseif ($isCliente) {
         // Usuário é um cliente
         $dados_cliente = mysqli_fetch_assoc($resultado_cliente);
