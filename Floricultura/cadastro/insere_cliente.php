@@ -1,5 +1,9 @@
+<?php
+    include '../../banco_de_dados/conecta.php';
+?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <!-- Required meta tags-->
@@ -10,7 +14,7 @@
     <meta name="keywords" content="Colorlib Templates">
 
     <!-- Title Page-->
-    <title>Au Register Forms by Colorlib</title>
+    <title>Cadastro de Cliente</title>
 
     <!-- Icons font CSS-->
     <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
@@ -27,23 +31,24 @@
 </head>
 
 <body>
+
     <div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
         <div class="wrapper wrapper--w680">
             <div class="card card-4">
                 <div class="card-body">
-                    <h2 class="title">Cadastro</h2>
-                    <form method="POST">
+                    <h2 class="title">Cadastro de Cliente</h2>
+                    <form action="../proc_insere_cliente.php" method="POST">
                         <div class="row row-space">
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Nome</label>
-                                    <input class="input--style-4" type="text" name="first_name">
+                                    <input class="input--style-4" type="text" name="nome">
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Telefone</label>
-                                    <input class="input--style-4" type="text" name="phone">
+                                    <input class="input--style-4" type="text" name="telefone">
                                 </div>
                             </div>
                         </div>
@@ -63,10 +68,10 @@
                         </div>
                         <div class="input-group">
                             <label class="label">CPF</label>
-                            <input class="input--style-4" type="text" name="cpf" id="cpf">
+                            <input class="input--style-4" type="text" name="cpf">
                         </div>
                         <div class="p-t-15">
-                            <button class="btn btn--radius-2 btn--pink" type="submit">Entrar</button>
+                            <button class="btn btn--radius-2 btn--pink" type="submit">Criar</button>
                         </div>
                     </form>
                 </div>
