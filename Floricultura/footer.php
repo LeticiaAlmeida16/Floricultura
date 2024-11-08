@@ -24,7 +24,7 @@
                     <div class="d-flex flex-column text-start footer-item">
                         <h4 class="text-light mb-3">Informações da Loja</h4>
                         <a class="btn-link" href="#">Sobre Nós</a>
-                        <a class="btn-link" href="#">Contate-Nos</a>
+                        <a class="btn-link" href="contact.php">Contate-Nos</a>
                         <a class="btn-link" href="#">Política de Privacidade</a>
                         <a class="btn-link" href="#">Termos e Condições</a>
                         <a class="btn-link" href="#">Política de Devolução</a>
@@ -34,12 +34,12 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="d-flex flex-column text-start footer-item">
                         <h4 class="text-light mb-3">Minha Conta</h4>
-                        <a class="btn-link" href="#">Minha Conta</a>
+                       <!--  <a class="btn-link" href="#">Minha Conta</a>
                         <a class="btn-link" href="#">Detalhes da Compra</a>
                         <a class="btn-link" href="#">Carrinho de Compras</a>
                         <a class="btn-link" href="#">Lista de Desejos</a>
                         <a class="btn-link" href="#">Histórico de Pedidos</a>
-                        <a class="btn-link" href="#">Pedidos Internacionais</a>
+                        <a class="btn-link" href="#">Pedidos Internacionais</a> -->
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
