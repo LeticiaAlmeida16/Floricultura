@@ -186,36 +186,36 @@ INSERT INTO `estoque_flores` (`id_flor`, `nome_flor`, `quantidade_flor`, `preco_
 (28, 'Flor de Lavanda', 15, 2.7, 'imgs/Flores/Lavanda.jpg'),
 (29, 'Flor de Estrelítzia', 11, 3.6, 'imgs/Flores/Estrelitzia.jpg'),
 (30, 'Flor de Miosótis', 7, 1.9, 'imgs/Flores/Miosotis.jpg'),
-(31, 'Flor de Jasmim', 20, 2.8, NULL),
-(32, 'Flor de Alstroemeria', 18, 3.2, NULL),
-(33, 'Flor de Dente de Leão', 14, 2, NULL),
-(34, 'Flor de Narciso', 19, 2.9, NULL),
-(35, 'Flor de Heliotrópio', 22, 3.5, NULL),
-(36, 'Flor de Fúcsia', 3, 4, NULL),
-(37, 'Flor de Lobélia', 4, 2.1, NULL),
-(38, 'Flor de Cosmos', 5, 3, NULL),
-(39, 'Flor de Sálvia', 6, 2.5, NULL),
-(40, 'Flor de Bico-de-lacre', 10, 3.1, NULL),
-(41, 'Flor de Petúnia', 11, 1.8, NULL),
-(42, 'Flor de Gerbera', 12, 2.6, NULL),
-(43, 'Flor de Xaxim', 8, 3.5, NULL),
-(44, 'Flor de Camélia', 14, 2.4, NULL),
-(45, 'Flor de Aster', 16, 1.9, NULL),
-(46, 'Flor de Lírio-do-vale', 9, 4.5, NULL),
-(47, 'Flor de Flor-de-lis', 10, 3, NULL),
-(48, 'Flor de Figueira', 7, 2.7, NULL),
-(49, 'Flor de Palma', 20, 1.8, NULL),
-(50, 'Flor de Alecrim', 15, 2.4, NULL),
-(51, 'Flor de Cebola', 13, 1.5, NULL),
-(52, 'Flor de Suculenta', 11, 4.2, NULL),
-(53, 'Flor de Begônia', 22, 3, NULL),
-(54, 'Flor de Angélica', 9, 2.9, NULL),
-(55, 'Flor de Zínia', 10, 1.8, NULL),
-(56, 'Flor de Antúrio', 12, 4, NULL),
-(57, 'Flor de Limoeiro', 3, 2.2, NULL),
-(58, 'Flor de Capuchinha', 4, 3.1, NULL),
-(59, 'Flor de Amor-perfeito', 5, 1.5, NULL),
-(60, 'Flor de Calêndula', 6, 2.6, NULL),
+(31, 'Flor de Jasmim', 20, 2.8, 'imgs/Flores/flor_de_jasmim.jpeg'),
+(32, 'Flor de Alstroemeria', 18, 3.2, 'imgs/Flores/flor_de_alstroemeria.jpeg'),
+(33, 'Flor de Dente de Leão', 14, 2, 'imgs/Flores/flor_de_dente_de_leao.jpeg'),
+(34, 'Flor de Narciso', 19, 2.9, 'imgs/Flores/flor_de_narciso.jpeg'),
+(35, 'Flor de Heliotrópio', 22, 3.5, 'imgs/Flores/flor_de_heliotropio.jpeg'),
+(36, 'Flor de Fúcsia', 3, 4, 'imgs/Flores/flor_de_fucsia.jpeg'),
+(37, 'Flor de Lobélia', 4, 2.1, 'imgs/Flores/flor_de_lobelia.jpeg'),
+(38, 'Flor de Cosmos', 5, 3, 'imgs/Flores/flor_de_cosmos.jpeg'),
+(39, 'Flor de Sálvia', 6, 2.5, 'imgs/Flores/flor_de_salvia.jpeg'),
+(40, 'Flor de Bico-de-lacre', 10, 3.1, 'imgs/Flores/flor_de_bico_de_lacre.jpeg'),
+(41, 'Flor de Petúnia', 11, 1.8, 'imgs/Flores/flor_de_petunia.jpeg'),
+(42, 'Flor de Gerbera', 12, 2.6, 'imgs/Flores/flor_de_gerbera.jpeg'),
+(43, 'Flor de Xaxim', 8, 3.5, 'imgs/Flores/flor_de_xaxim.jpeg'),
+(44, 'Flor de Camélia', 14, 2.4, 'imgs/Flores/flor_de_camelia.jpeg'),
+(45, 'Flor de Aster', 16, 1.9, 'imgs/Flores/flor_de_aster.jpeg'),
+(46, 'Flor de Lírio-do-vale', 9, 4.5, 'imgs/Flores/flor_de_lirio_do_vale.jpeg'),
+(47, 'Flor de Flor-de-lis', 10, 3, 'imgs/Flores/flor_de_flor_de_lis.jpeg'),
+(48, 'Flor de Figueira', 7, 2.7, 'imgs/Flores/flor_de_figueira.jpeg'),
+(49, 'Flor de Palma', 20, 1.8, 'imgs/Flores/flor_de_palma.jpeg'),
+(50, 'Flor de Alecrim', 15, 2.4, 'imgs/Flores/flor_de_alecrim.jpeg'),
+(51, 'Flor de Cebola', 13, 1.5, 'imgs/Flores/flor_de_cebola.jpeg'),
+(52, 'Flor de Suculenta', 11, 4.2, 'imgs/Flores/flor_de_suculenta.jpeg'),
+(53, 'Flor de Begônia', 22, 3, 'imgs/Flores/flor_de_begonia.jpeg'),
+(54, 'Flor de Angélica', 9, 2.9, 'imgs/Flores/flor_de_angelica.jpeg'),
+(55, 'Flor de Zínia', 10, 1.8, 'imgs/Flores/flor_de_zinia.jpeg'),
+(56, 'Flor de Antúrio', 12, 4, 'imgs/Flores/flor_de_anturio.jpeg'),
+(57, 'Flor de Limoeiro', 3, 2.2, 'imgs/Flores/flor_de_limoeiro.jpeg'),
+(58, 'Flor de Capuchinha', 4, 3.1, 'imgs/Flores/flor_de_capuchinha.jpeg'),
+(59, 'Flor de Amor-perfeito', 5, 1.5, 'imgs/Flores/flor_de_amor_perfeito.jpeg'),
+(60, 'Flor de Calêndula', 6, 2.6, 'imgs/Flores/flor_de_calendula.jpeg'),
 (61, 'Flor de Nepenta', 2, 4.1, NULL),
 (62, 'Flor de Dama-da-noite', 7, 3, NULL),
 (63, 'Flor de Laranjeira', 10, 2.8, NULL),
@@ -267,6 +267,24 @@ CREATE TABLE `pedidos` (
   `fk_cadastro_cliente_cpf_cliente` varchar(14) DEFAULT NULL,
   `fk_estoque_flores_id_flor` int(11) DEFAULT NULL,
   `fk_cadastro_vendedor_cpf_vendedor` varchar(14) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Estrutura para tabela `comentarios`
+--
+
+CREATE TABLE `comentarios` (
+  `id_comentario` int auto_increment,
+  `conteudo` varchar(520) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Estrutura para tabela `comentarios_do_cliente`
+--
+
+CREATE TABLE `comentarios_do_cliente` (
+  `fk_cadastro_cliente_cpf_cliente` varchar(14) DEFAULT NULL,
+  `fk_comentarios_id_comentario` int auto_increment
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
