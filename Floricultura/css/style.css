@@ -178,7 +178,7 @@
 
 /*** Hero Header ***/
 .hero-header {
-    background: linear-gradient(rgba(248, 223, 173, 0.1), rgba(248, 223, 173, 0.1)), url(../imgs/fundo.jpeg);
+    background: linear-gradient(rgba(248, 223, 173, 0.1), rgba(248, 223, 173, 0.1)), url(../imgs/Papel\ De\ Parede\ Estampa\ Floral.jpg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -414,7 +414,9 @@
     margin-bottom: 0;
 }
 /*** Facts End ***/
-
+.flor{
+    background-color: deeppink;
+}
 
 /*** testimonial Start ***/
 .testimonial .owl-nav .owl-next {
@@ -505,3 +507,4 @@
     height: 100vh !important;
     }
     }
+    
