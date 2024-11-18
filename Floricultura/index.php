@@ -9,7 +9,7 @@
             <div class="row g-5 align-items-center">
                 <div class="col-md-12 col-lg-7">
                     <h4 class="mb-3 text-secondary">Flores 100% Naturais</h4>
-                    <h1 class="mb-5 display-3 text-primary">Flores & Arranjos Exclusivos</h1>
+                    <h1 class=" mb-5 display-3 text-primary">Flores & Arranjos Exclusivos</h1>
                 </div>
                 <div class="col-md-12 col-lg-5">
                     <div id="carouselId" class="carousel slide position-relative" data-bs-ride="carousel">

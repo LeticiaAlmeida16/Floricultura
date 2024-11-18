@@ -23,12 +23,9 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="d-flex flex-column text-start footer-item">
                         <h4 class="text-light mb-3">Informações da Loja</h4>
-                        <a class="btn-link" href="#">Sobre Nós</a>
+                        <a class="btn-link" href="sobrenos.php">Sobre Nós</a>
                         <a class="btn-link" href="contact.php">Contate-Nos</a>
-                        <a class="btn-link" href="#">Política de Privacidade</a>
-                        <a class="btn-link" href="#">Termos e Condições</a>
-                        <a class="btn-link" href="#">Política de Devolução</a>
-                        <a class="btn-link" href="#">FAQs & Ajuda</a>
+                        
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
