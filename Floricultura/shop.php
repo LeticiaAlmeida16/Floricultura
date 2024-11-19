@@ -38,11 +38,7 @@
                                             <h4>".$dados['nome_flor']."</h4>";
                                     echo "<div class='d-flex justify-content-between flex-lg-wrap'>
                                             <p class='text-dark fs-5 fw-bold mb-0'> R$".$dados['preco_flor']."</p>";
-                                    echo "<a href='cart.php'
-                                            class='btn border border-secondary rounded-pill px-3 text-primary'><i
-                                            class='fa fa-shopping-bag me-2 text-primary'></i> Add to
-                                            cart</a>
-                                                    </div>
+                                    echo "</div>
                                                 </div>
                                             </div>
                                         </div>";

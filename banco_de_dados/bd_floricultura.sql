@@ -19,11 +19,8 @@ SET time_zone = "+00:00";
 
 --
 -- Banco de dados: `bd_floricultura`
---
-
--- --------------------------------------------------------
-
---
+CREATE DATABASE IF NOT EXISTS `bd_floricultura` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `bd_floricultura`;
 -- Estrutura para tabela `cadastro_adm`
 --
 
@@ -113,56 +110,6 @@ INSERT INTO `comentarios` (`id_comentario`, `conteudo`, `id_cliente`, `nota`) VA
 (6, 'Belo trabalho! Merece MB', 1, 10),
 (7, 'Belas flores', 1, 10);
 
--- --------------------------------------------------------
-
---
--- Estrutura para tabela `desconto`
---
-
-CREATE TABLE `desconto` (
-  `id_desconto` int(11) NOT NULL,
-  `valor_desconto` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
---
--- Despejando dados para a tabela `desconto`
---
-
-INSERT INTO `desconto` (`id_desconto`, `valor_desconto`) VALUES
-(1, 5),
-(2, 10),
-(3, 15),
-(4, 20),
-(5, 25),
-(6, 30),
-(7, 35),
-(8, 40),
-(9, 45),
-(10, 50),
-(11, 55),
-(12, 60),
-(13, 65),
-(14, 70),
-(15, 75),
-(16, 80),
-(17, 85),
-(18, 90),
-(19, 95),
-(20, 100);
-
--- --------------------------------------------------------
-
---
--- Estrutura para tabela `desconto_flor`
---
-
-CREATE TABLE `desconto_flor` (
-  `fk_desconto_id_desconto` int(11) DEFAULT NULL,
-  `fk_estoque_flores_id_flor` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
--- --------------------------------------------------------
-
 --
 -- Estrutura para tabela `estoque_flores`
 --
@@ -210,7 +157,7 @@ INSERT INTO `estoque_flores` (`id_flor`, `nome_flor`, `quantidade_flor`, `preco_
 (28, 'Flor de Lavanda', 15, 2.7, 'imgs/Flores/Lavanda.jpg'),
 (29, 'Flor de Estrelítzia', 11, 3.6, 'imgs/Flores/Estrelitzia.jpg'),
 (30, 'Flor de Miosótis', 7, 1.9, 'imgs/Flores/Miosotis.jpg'),
-(31, 'Flor de Jasmim', 20, 2.8, 'imgs/Flores/flor_de_jasmim.jpeg'),
+(31, 'Flor de Jasmim', 20, 2.8, 'imgs/Flores/Jasmin.jpg'),
 (32, 'Flor de Alstroemeria', 18, 3.2, 'imgs/Flores/flor_de_alstroemeria.jpeg'),
 (33, 'Flor de Dente de Leão', 14, 2, 'imgs/Flores/flor_de_dente_de_leao.jpeg'),
 (34, 'Flor de Narciso', 19, 2.9, 'imgs/Flores/flor_de_narciso.jpeg'),
@@ -240,63 +187,48 @@ INSERT INTO `estoque_flores` (`id_flor`, `nome_flor`, `quantidade_flor`, `preco_
 (58, 'Flor de Capuchinha', 4, 3.1, 'imgs/Flores/flor_de_capuchinha.jpeg'),
 (59, 'Flor de Amor-perfeito', 5, 1.5, 'imgs/Flores/flor_de_amor_perfeito.jpeg'),
 (60, 'Flor de Calêndula', 6, 2.6, 'imgs/Flores/flor_de_calendula.jpeg'),
-(61, 'Flor de Nepenta', 2, 4.1, NULL),
-(62, 'Flor de Dama-da-noite', 7, 3, NULL),
-(63, 'Flor de Laranjeira', 10, 2.8, NULL),
-(64, 'Flor de Açafrão', 15, 4.5, NULL),
-(65, 'Flor de Malva', 11, 2, NULL),
-(66, 'Flor de Peperômia', 9, 1.9, NULL),
-(67, 'Flor de Acalifa', 12, 3.2, NULL),
-(68, 'Flor de Amaryllis', 20, 5, NULL),
-(69, 'Flor de Trevo', 8, 2.3, NULL),
-(70, 'Flor de Coração-sangue', 16, 2.5, NULL),
-(71, 'Flor de Sinfonia', 18, 3, NULL),
-(72, 'Flor de Flor-de-maio', 13, 2.7, NULL),
-(73, 'Flor de Crotalária', 19, 1.8, NULL),
-(74, 'Flor de Escabiose', 21, 2.6, NULL),
-(75, 'Flor de Cravina', 17, 2.9, NULL),
-(76, 'Flor de Gardênia', 14, 4, NULL),
-(77, 'Flor de Suculenta Verde', 12, 3.5, NULL),
-(78, 'Flor de Pothos', 8, 1.8, NULL),
-(79, 'Flor de Pansy', 15, 2.9, NULL),
-(80, 'Flor de Trapoeraba', 10, 3, NULL),
-(81, 'Flor de Falsa-azaleia', 4, 2.2, NULL),
-(82, 'Flor de Flor-de-páscoa', 3, 2.6, NULL),
-(83, 'Flor de Favo-de-mel', 6, 1.9, NULL),
-(84, 'Flor de Heracleum', 2, 3.1, NULL),
-(85, 'Flor de Papoila', 5, 2.4, NULL),
-(86, 'Flor de Fritillária', 7, 4.5, NULL),
-(87, 'Flor de Talinum', 13, 2.9, NULL),
-(88, 'Flor de Rosinha', 9, 1.8, NULL),
-(89, 'Flor de Salvia', 12, 3.3, NULL),
-(90, 'Flor de Clívia', 10, 2.7, NULL),
-(91, 'Flor de Pérgula', 15, 4, NULL),
-(92, 'Flor de Espatódia', 11, 3.5, NULL),
-(93, 'Flor de Calathea', 8, 1.9, NULL),
-(94, 'Flor de Alocásia', 6, 4.1, NULL),
-(95, 'Flor de Guzmânia', 7, 2.3, NULL),
-(96, 'Flor de Canteiro', 10, 3.2, NULL),
-(97, 'Flor de Crássula', 14, 2.5, NULL),
-(98, 'Flor de Talinão', 11, 3, NULL),
-(99, 'Flor de Monstera', 9, 4.5, NULL),
-(100, 'Flor de Tigridia', 12, 3.6, NULL);
+(61, 'Flor de Nepenta', 2, 4.1, 'imgs/Flores/logo.png'),
+(62, 'Flor de Dama-da-noite', 7, 3, 'imgs/Flores/logo.png'),
+(63, 'Flor de Laranjeira', 10, 2.8, 'imgs/Flores/logo.png'),
+(64, 'Flor de Açafrão', 15, 4.5, 'imgs/Flores/logo.png'),
+(65, 'Flor de Malva', 11, 2, 'imgs/Flores/logo.png'),
+(66, 'Flor de Peperômia', 9, 1.9, 'imgs/Flores/logo.png'),
+(67, 'Flor de Acalifa', 12, 3.2, 'imgs/Flores/logo.png'),
+(68, 'Flor de Amaryllis', 20, 5, 'imgs/Flores/logo.png'),
+(69, 'Flor de Trevo', 8, 2.3, 'imgs/Flores/logo.png'),
+(70, 'Flor de Coração-sangue', 16, 2.5, 'imgs/Flores/logo.png'),
+(71, 'Flor de Sinfonia', 18, 3, 'imgs/Flores/logo.png'),
+(72, 'Flor de Flor-de-maio', 13, 2.7, 'imgs/Flores/logo.png'),
+(73, 'Flor de Crotalária', 19, 1.8, 'imgs/Flores/logo.png'),
+(74, 'Flor de Escabiose', 21, 2.6, 'imgs/Flores/logo.png'),
+(75, 'Flor de Cravina', 17, 2.9, 'imgs/Flores/logo.png'),
+(76, 'Flor de Gardênia', 14, 4, 'imgs/Flores/logo.png'),
+(77, 'Flor de Suculenta Verde', 12, 3.5, 'imgs/Flores/logo.png'),
+(78, 'Flor de Pothos', 8, 1.8, 'imgs/Flores/logo.png'),
+(79, 'Flor de Pansy', 15, 2.9, 'imgs/Flores/logo.png'),
+(80, 'Flor de Trapoeraba', 10, 3, 'imgs/Flores/logo.png'),
+(81, 'Flor de Falsa-azaleia', 4, 2.2, 'imgs/Flores/logo.png'),
+(82, 'Flor de Flor-de-páscoa', 3, 2.6, 'imgs/Flores/logo.png'),
+(83, 'Flor de Favo-de-mel', 6, 1.9, 'imgs/Flores/logo.png'),
+(84, 'Flor de Heracleum', 2, 3.1, 'imgs/Flores/logo.png'),
+(85, 'Flor de Papoila', 5, 2.4, 'imgs/Flores/logo.png'),
+(86, 'Flor de Fritillária', 7, 4.5, 'imgs/Flores/logo.png'),
+(87, 'Flor de Talinum', 13, 2.9, 'imgs/Flores/logo.png'),
+(88, 'Flor de Rosinha', 9, 1.8, 'imgs/Flores/logo.png'),
+(89, 'Flor de Salvia', 12, 3.3, 'imgs/Flores/logo.png'),
+(90, 'Flor de Clívia', 10, 2.7, 'imgs/Flores/logo.png'),
+(91, 'Flor de Pérgula', 15, 4, 'imgs/Flores/logo.png'),
+(92, 'Flor de Espatódia', 11, 3.5, 'imgs/Flores/logo.png'),
+(93, 'Flor de Calathea', 8, 1.9, 'imgs/Flores/logo.png'),
+(94, 'Flor de Alocásia', 6, 4.1, 'imgs/Flores/logo.png'),
+(95, 'Flor de Guzmânia', 7, 2.3, 'imgs/Flores/logo.png'),
+(96, 'Flor de Canteiro', 10, 3.2, 'imgs/Flores/logo.png'),
+(97, 'Flor de Crássula', 14, 2.5, 'imgs/Flores/logo.png'),
+(98, 'Flor de Talinão', 11, 3, 'imgs/Flores/logo.png'),
+(99, 'Flor de Monstera', 9, 4.5, 'imgs/Flores/logo.png'),
+(100, 'Flor de Tigridia', 12, 3.6, 'imgs/Flores/logo.png');
 
 -- --------------------------------------------------------
-
---
--- Estrutura para tabela `pedidos`
---
-
-CREATE TABLE `pedidos` (
-  `fk_cadastro_cliente_cpf_cliente` varchar(14) DEFAULT NULL,
-  `fk_estoque_flores_id_flor` int(11) DEFAULT NULL,
-  `fk_cadastro_vendedor_cpf_vendedor` varchar(14) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
---
--- Índices para tabelas despejadas
---
-
 --
 -- Índices de tabela `cadastro_adm`
 --
