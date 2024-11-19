@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 08/11/2024 às 00:41
+-- Tempo de geração: 19/11/2024 às 23:00
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -20,8 +20,7 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `bd_floricultura`
 --
-CREATE DATABASE IF NOT EXISTS `bd_floricultura` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `bd_floricultura`;
+
 -- --------------------------------------------------------
 
 --
@@ -29,6 +28,7 @@ USE `bd_floricultura`;
 --
 
 CREATE TABLE `cadastro_adm` (
+  `id_adm` int(11) NOT NULL,
   `telefone_adm` varchar(14) DEFAULT NULL,
   `email_adm` varchar(128) DEFAULT NULL,
   `cpf_adm` varchar(14) NOT NULL,
@@ -40,8 +40,8 @@ CREATE TABLE `cadastro_adm` (
 -- Despejando dados para a tabela `cadastro_adm`
 --
 
-INSERT INTO `cadastro_adm` (`telefone_adm`, `email_adm`, `cpf_adm`, `nome_adm`, `senha_adm`) VALUES
-('(11)95243-9006', 'chefe.aumeidan@email.com', '529.160.128-00', 'Chefe Aumeidan', 'senhaAdmChefe');
+INSERT INTO `cadastro_adm` (`id_adm`, `telefone_adm`, `email_adm`, `cpf_adm`, `nome_adm`, `senha_adm`) VALUES
+(1, '(11)95243-9006', 'chefe.aumeidan@email.com', '529.160.128-00', 'Chefe Aumeidan', 'senhaAdmChefe');
 
 -- --------------------------------------------------------
 
@@ -50,20 +50,22 @@ INSERT INTO `cadastro_adm` (`telefone_adm`, `email_adm`, `cpf_adm`, `nome_adm`, 
 --
 
 CREATE TABLE `cadastro_cliente` (
+  `id_cliente` int(11) NOT NULL,
   `cpf_cliente` varchar(14) NOT NULL,
   `telefone_cliente` varchar(14) DEFAULT NULL,
   `nome_cliente` varchar(128) DEFAULT NULL,
   `email_cliente` varchar(128) DEFAULT NULL,
-  `senha_cliente` varchar(64) DEFAULT NULL
+  `senha_cliente` varchar(64) DEFAULT NULL,
+  `tipo` enum('cliente','vendedor','administrador') NOT NULL DEFAULT 'cliente'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Despejando dados para a tabela `cadastro_cliente`
 --
 
-INSERT INTO `cadastro_cliente` (`cpf_cliente`, `telefone_cliente`, `nome_cliente`, `email_cliente`, `senha_cliente`) VALUES
-('12345678912', '(11)97563-0023', 'Anderson Vanin', 'anderson@gmail.com', '123456'),
-('21987654321', '(11)98054-2255', 'Ricardo Moraes', 'ricardo@gmail.com', '123456');
+INSERT INTO `cadastro_cliente` (`id_cliente`, `cpf_cliente`, `telefone_cliente`, `nome_cliente`, `email_cliente`, `senha_cliente`, `tipo`) VALUES
+(1, '12345678912', '(11)97563-0023', 'Anderson Vanin', 'anderson@gmail.com', '123456', 'cliente'),
+(2, '21987654321', '(11)98054-2255', 'Ricardo Moraes', 'ricardo@gmail.com', '123456', 'cliente');
 
 -- --------------------------------------------------------
 
@@ -72,6 +74,7 @@ INSERT INTO `cadastro_cliente` (`cpf_cliente`, `telefone_cliente`, `nome_cliente
 --
 
 CREATE TABLE `cadastro_vendedor` (
+  `id_vendedor` int(11) NOT NULL,
   `cpf_vendedor` varchar(14) NOT NULL,
   `telefone_vendedor` varchar(14) DEFAULT NULL,
   `nome_vendedor` varchar(128) DEFAULT NULL,
@@ -83,11 +86,32 @@ CREATE TABLE `cadastro_vendedor` (
 -- Despejando dados para a tabela `cadastro_vendedor`
 --
 
-INSERT INTO `cadastro_vendedor` (`cpf_vendedor`, `telefone_vendedor`, `nome_vendedor`, `email_vendedor`, `senha_vendedor`) VALUES
-('124.701.218-69', '(11)91912-2207', 'França Bardella', 'franca.bardella@email.com', 'senha456'),
-('427.566.812-13', '(11)99971-2510', 'Filha do Hoender Rodrigues', 'hoender.rodrigues@email.com', 'senha789'),
-('458.256.156-09', '(11)91567-2033', 'Pigmeu Garcia', 'pigmeu.garcia@email.com', 'senha123'),
-('462.903.475-96', '(11)95623-0789', 'Bolivia Gama', 'bolivia.gama@email.com', 'senha321');
+INSERT INTO `cadastro_vendedor` (`id_vendedor`, `cpf_vendedor`, `telefone_vendedor`, `nome_vendedor`, `email_vendedor`, `senha_vendedor`) VALUES
+(1, '124.701.218-69', '(11)91912-2207', 'França Bardella', 'franca.bardella@email.com', 'senha456'),
+(2, '427.566.812-13', '(11)99971-2510', 'Filha do Hoender Rodrigues', 'hoender.rodrigues@email.com', 'senha789'),
+(3, '458.256.156-09', '(11)91567-2033', 'Pigmeu Garcia', 'pigmeu.garcia@email.com', 'senha123'),
+(4, '462.903.475-96', '(11)95623-0789', 'Bolivia Gama', 'bolivia.gama@email.com', 'senha321');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `comentarios`
+--
+
+CREATE TABLE `comentarios` (
+  `id_comentario` int(11) NOT NULL,
+  `conteudo` varchar(520) DEFAULT NULL,
+  `id_cliente` int(11) DEFAULT NULL,
+  `nota` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Despejando dados para a tabela `comentarios`
+--
+
+INSERT INTO `comentarios` (`id_comentario`, `conteudo`, `id_cliente`, `nota`) VALUES
+(6, 'Belo trabalho! Merece MB', 1, 10),
+(7, 'Belas flores', 1, 10);
 
 -- --------------------------------------------------------
 
@@ -270,24 +294,6 @@ CREATE TABLE `pedidos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Estrutura para tabela `comentarios`
---
-
-CREATE TABLE `comentarios` (
-  `id_comentario` int auto_increment,
-  `conteudo` varchar(520) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
---
--- Estrutura para tabela `comentarios_do_cliente`
---
-
-CREATE TABLE `comentarios_do_cliente` (
-  `fk_cadastro_cliente_cpf_cliente` varchar(14) DEFAULT NULL,
-  `fk_comentarios_id_comentario` int auto_increment
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
---
 -- Índices para tabelas despejadas
 --
 
@@ -295,32 +301,26 @@ CREATE TABLE `comentarios_do_cliente` (
 -- Índices de tabela `cadastro_adm`
 --
 ALTER TABLE `cadastro_adm`
-  ADD PRIMARY KEY (`cpf_adm`);
+  ADD PRIMARY KEY (`id_adm`);
 
 --
 -- Índices de tabela `cadastro_cliente`
 --
 ALTER TABLE `cadastro_cliente`
-  ADD PRIMARY KEY (`cpf_cliente`);
+  ADD PRIMARY KEY (`id_cliente`);
 
 --
 -- Índices de tabela `cadastro_vendedor`
 --
 ALTER TABLE `cadastro_vendedor`
-  ADD PRIMARY KEY (`cpf_vendedor`);
+  ADD PRIMARY KEY (`id_vendedor`);
 
 --
--- Índices de tabela `desconto`
+-- Índices de tabela `comentarios`
 --
-ALTER TABLE `desconto`
-  ADD PRIMARY KEY (`id_desconto`);
-
---
--- Índices de tabela `desconto_flor`
---
-ALTER TABLE `desconto_flor`
-  ADD KEY `FK_desconto_flor_1` (`fk_desconto_id_desconto`),
-  ADD KEY `FK_desconto_flor_2` (`fk_estoque_flores_id_flor`);
+ALTER TABLE `comentarios`
+  ADD PRIMARY KEY (`id_comentario`),
+  ADD KEY `id_cliente` (`id_cliente`);
 
 --
 -- Índices de tabela `estoque_flores`
@@ -329,31 +329,48 @@ ALTER TABLE `estoque_flores`
   ADD PRIMARY KEY (`id_flor`);
 
 --
--- Índices de tabela `pedidos`
+-- AUTO_INCREMENT para tabelas despejadas
 --
-ALTER TABLE `pedidos`
-  ADD KEY `FK_pedidos_1` (`fk_cadastro_cliente_cpf_cliente`),
-  ADD KEY `FK_pedidos_2` (`fk_estoque_flores_id_flor`),
-  ADD KEY `FK_pedidos_3` (`fk_cadastro_vendedor_cpf_vendedor`);
+
+--
+-- AUTO_INCREMENT de tabela `cadastro_adm`
+--
+ALTER TABLE `cadastro_adm`
+  MODIFY `id_adm` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT de tabela `cadastro_cliente`
+--
+ALTER TABLE `cadastro_cliente`
+  MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT de tabela `cadastro_vendedor`
+--
+ALTER TABLE `cadastro_vendedor`
+  MODIFY `id_vendedor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT de tabela `comentarios`
+--
+ALTER TABLE `comentarios`
+  MODIFY `id_comentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT de tabela `estoque_flores`
+--
+ALTER TABLE `estoque_flores`
+  MODIFY `id_flor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
 
 --
 -- Restrições para tabelas despejadas
 --
 
 --
--- Restrições para tabelas `desconto_flor`
+-- Restrições para tabelas `comentarios`
 --
-ALTER TABLE `desconto_flor`
-  ADD CONSTRAINT `FK_desconto_flor_1` FOREIGN KEY (`fk_desconto_id_desconto`) REFERENCES `desconto` (`id_desconto`) ON DELETE SET NULL,
-  ADD CONSTRAINT `FK_desconto_flor_2` FOREIGN KEY (`fk_estoque_flores_id_flor`) REFERENCES `estoque_flores` (`id_flor`) ON DELETE SET NULL;
-
---
--- Restrições para tabelas `pedidos`
---
-ALTER TABLE `pedidos`
-  ADD CONSTRAINT `FK_pedidos_1` FOREIGN KEY (`fk_cadastro_cliente_cpf_cliente`) REFERENCES `cadastro_cliente` (`cpf_cliente`) ON DELETE SET NULL,
-  ADD CONSTRAINT `FK_pedidos_2` FOREIGN KEY (`fk_estoque_flores_id_flor`) REFERENCES `estoque_flores` (`id_flor`) ON DELETE SET NULL,
-  ADD CONSTRAINT `FK_pedidos_3` FOREIGN KEY (`fk_cadastro_vendedor_cpf_vendedor`) REFERENCES `cadastro_vendedor` (`cpf_vendedor`) ON DELETE SET NULL;
+ALTER TABLE `comentarios`
+  ADD CONSTRAINT `comentarios_ibfk_1` FOREIGN KEY (`id_cliente`) REFERENCES `cadastro_cliente` (`id_cliente`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
