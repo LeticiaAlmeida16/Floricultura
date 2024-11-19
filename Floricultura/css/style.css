@@ -12,6 +12,11 @@
      visibility: visible;
      opacity: 1;
  }
+ 
+ .text-center.my-4 button {
+    position: relative;   
+    margin-top: 120px;     
+}
 
  .back-to-top {
     position: fixed;

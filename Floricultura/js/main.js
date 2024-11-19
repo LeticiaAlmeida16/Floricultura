@@ -7,7 +7,7 @@ var spinner = function () {
         if ($('#spinner').length > 0) {
             $('#spinner').removeClass('show'); // Remove a classe 'show' para ocultar o spinner
         }
-    }, 1000); // Define um atraso de 1 segundo (ajuste conforme necessário)
+    }, 5000); // Define um atraso de 1 segundo (ajuste conforme necessário)
 };
 spinner(); // Chama a função corretamente, sem argumentos
 

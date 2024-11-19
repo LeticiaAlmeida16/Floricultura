@@ -17,9 +17,9 @@
       <h3>Nossa Missão</h3>
       <p>Transformar momentos simples em inesquecíveis através da magia das flores.</p>
       <ul>
-        <li>🌸 Flores frescas e de alta qualidade.</li>
-        <li>🌿 Arranjos feitos com carinho e criatividade.</li>
-        <li>🌻 Atendimento personalizado para cada cliente.</li>
+        <li>Flores frescas e de alta qualidade.</li>
+        <li>Arranjos feitos com carinho e criatividade.</li>
+        <li>Atendimento personalizado para cada cliente.</li>
       </ul>
     </section>
   </main>

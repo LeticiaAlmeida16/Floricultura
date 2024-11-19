@@ -3,122 +3,80 @@
     include 'menu.php';
 ?>
 
-        <!-- Modal Search Start -->
-               <!-- Single Page Header start -->
-               <div class="container-fluid page-header py-5">
-            <h1 class="text-center text-white display-6">Depoimentos</h1>
-            <p class="text-center text-light mt-3">
-                Conheça a experiência de nossos clientes com nossos produtos e serviços. 
-                Nossa missão é trazer beleza e vida para o seu ambiente, sempre com a satisfação em primeiro lugar!
-            </p>
+<!-- Modal para adicionar comentário -->
+<div class="modal fade" id="addCommentModal" tabindex="-1" aria-labelledby="addCommentModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form action="comentario/adicionar_comentario.php" method="post">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addCommentModalLabel">Adicionar Comentário</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="conteudo" class="form-label">Comentário</label>
+                        <textarea name="conteudo" class="form-control" id="conteudo" rows="3" maxlength="520" required></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-primary">Adicionar Comentário</button>
+                </div>
+                <div class="mb-3">
+                    <label for="nota" class="form-label">Nota (0 a 10)</label>
+                    <input type="number" class="form-control" id="nota" name="nota" min="0" max="10" required>
+                </div>
+            </form>
+        </div>
+    </div>
 </div>
+
+<!-- Seção de comentários e botão "Adicionar Comentário" -->
+<div class="container-fluid py-5 bg-light">
+    <div class="container">
+        <div class="text-center my-4">
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addCommentModal">Adicionar Comentário</button>
         </div>
-        <!-- Single Page Header End -->
 
-
-        <!-- Testimonial Start -->
-        <div class="container-fluid testimonial py-5">
-            <div class="container py-5">
-                <div class="testimonial-header text-center">
-                    <h4 class="text-primary">Depoimentos</h4>
-                    <h1 class="display-5 mb-5 text-dark">O que nossos clientes estão dizendo!</h1>
-                </div>
-                <div class="owl-carousel testimonial-carousel">
-                    <!-- Testimonial 1 -->
-                    <div class="testimonial-item img-border-radius bg-light rounded p-4">
-                        <div class="position-relative">
-                            <i class="fa fa-quote-right fa-2x text-secondary position-absolute" style="bottom: 30px; right: 0;"></i>
-                            <div class="mb-4 pb-4 border-bottom border-secondary">
-                                <p class="mb-0">
-                                    “Comprei um buquê de flores para o aniversário da minha esposa e fiquei impressionado com a qualidade e frescor das flores.
-                                    O atendimento foi excelente, e com certeza voltarei a comprar aqui!” 
-                                </p>
-                            </div>
-                            <div class="d-flex align-items-center flex-nowrap">
-                                <div class="bg-secondary rounded">
-                                    <img src="img/testimonial-1.jpg" class="img-fluid rounded" style="width: 100px; height: 100px;" alt="Cliente 1">
-                                </div>
-                                <div class="ms-4 d-block">
-                                    <h4 class="text-dark">Carlos Oliveira</h4>
-                                    <p class="m-0 pb-3">Empresário</p>
-                                    <div class="d-flex pe-5">
-                                        <i class="fas fa-star text-primary"></i>
-                                        <i class="fas fa-star text-primary"></i>
-                                        <i class="fas fa-star text-primary"></i>
-                                        <i class="fas fa-star text-primary"></i>
-                                        <i class="fas fa-star text-primary"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Testimonial 2 -->
-                    <div class="testimonial-item img-border-radius bg-light rounded p-4">
-                        <div class="position-relative">
-                            <i class="fa fa-quote-right fa-2x text-secondary position-absolute" style="bottom: 30px; right: 0;"></i>
-                            <div class="mb-4 pb-4 border-bottom border-secondary">
-                                <p class="mb-0">
-                                    “A experiência de comprar plantas e flores online foi maravilhosa! Recebi minhas plantas no prazo e em ótimo estado. 
-                                    Com certeza indicarei a loja para meus amigos!”
-                                </p>
-                            </div>
-                            <div class="d-flex align-items-center flex-nowrap">
-                                <div class="bg-secondary rounded">
-                                    <img src="img/testimonial-2.jpg" class="img-fluid rounded" style="width: 100px; height: 100px;" alt="Cliente 2">
-                                </div>
-                                <div class="ms-4 d-block">
-                                    <h4 class="text-dark">Ana Souza</h4>
-                                    <p class="m-0 pb-3">Professora</p>
-                                    <div class="d-flex pe-5">
-                                        <i class="fas fa-star text-primary"></i>
-                                        <i class="fas fa-star text-primary"></i>
-                                        <i class="fas fa-star text-primary"></i>
-                                        <i class="fas fa-star text-primary"></i>
-                                        <i class="fas fa-star text-primary"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Testimonial 3 -->
-                    <div class="testimonial-item img-border-radius bg-light rounded p-4">
-                        <div class="position-relative">
-                            <i class="fa fa-quote-right fa-2x text-secondary position-absolute" style="bottom: 30px; right: 0;"></i>
-                            <div class="mb-4 pb-4 border-bottom border-secondary">
-                                <p class="mb-0">
-                                    “A equipe da Floricultura é muito atenciosa e preocupada com o cliente. Recebi todo o suporte que precisava e as plantas 
-                                    chegaram perfeitas e bem cuidadas.”
-                                </p>
-                            </div>
-                            <div class="d-flex align-items-center flex-nowrap">
-                                <div class="bg-secondary rounded">
-                                    <img src="img/testimonial-3.jpg" class="img-fluid rounded" style="width: 100px; height: 100px;" alt="Cliente 3">
-                                </div>
-                                <div class="ms-4 d-block">
-                                    <h4 class="text-dark">Beatriz Lima</h4>
-                                    <p class="m-0 pb-3">Designer de Interiores</p>
-                                    <div class="d-flex pe-5">
-                                        <i class="fas fa-star text-primary"></i>
-                                        <i class="fas fa-star text-primary"></i>
-                                        <i class="fas fa-star text-primary"></i>
-                                        <i class="fas fa-star text-primary"></i>
-                                        <i class="fas fa-star text-primary"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Testimonial End -->
-
-
+        <h4 class="text-dark text-center mb-4">Comentários dos Clientes</h4>
+        <div class="row">
         <?php
-            include 'footer.php';
-        ?>
+// Obter os comentários com o nome do cliente associado
+$query = "SELECT c.conteudo, c.nota, u.nome_cliente, u.tipo FROM comentarios c 
+          JOIN cadastro_cliente u ON c.id_cliente = u.id_cliente";
+$result = mysqli_query($conexao, $query);
+
+if (mysqli_num_rows($result) > 0) {
+    while ($row = mysqli_fetch_assoc($result)) {
+        // Exibe o nome do cliente que realmente fez o comentário
+        echo '<div class="col-md-4 mb-3">';
+        echo '<div class="bg-white p-4 rounded shadow">';
+        
+        // Verifica o tipo de usuário e exibe o nome
+        if ($row['tipo'] == 'cliente') {
+            echo '<p class="mb-0 text-dark"><strong>' . htmlspecialchars($row['nome_cliente']) . '</strong></p>';
+        } else {
+            echo '<p class="mb-0 text-dark"><strong>Usuário não identificado</strong></p>';
+        }
+        
+        echo '<p class="mb-0 text-dark">' . htmlspecialchars($row['conteudo']) . '</p>';
+        echo '<p class="mb-0 text-muted">Nota: ' . htmlspecialchars($row['nota']) . '</p>';
+        echo '</div>';
+        echo '</div>';
+    }
+} else {
+    echo '<p class="text-center text-muted">Nenhum comentário disponível.</p>';
+}
+?>
+
+        </div>
+    </div>
+</div>
+
+<?php
+    include 'footer.php';
+?>
+
 
         <!-- Copyright Start -->
         <div class="container-fluid copyright bg-dark py-4">
