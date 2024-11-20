@@ -69,7 +69,7 @@
                     </a>
                     <?php endif; ?>
                     </div>
-                            <a href="Login_v1/index.html" class="btn btn-outline-secondary ms-3 my-auto">
+                            <a href="Login_v1/index.php" class="btn btn-outline-secondary ms-3 my-auto">
                                 Voltar
                             </a>
                 </div>

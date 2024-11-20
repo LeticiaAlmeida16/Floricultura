@@ -61,8 +61,8 @@ CREATE TABLE `cadastro_cliente` (
 --
 
 INSERT INTO `cadastro_cliente` (`id_cliente`, `cpf_cliente`, `telefone_cliente`, `nome_cliente`, `email_cliente`, `senha_cliente`, `tipo`) VALUES
-(1, '12345678912', '(11)97563-0023', 'Anderson Vanin', 'anderson@gmail.com', '123456', 'cliente'),
-(2, '21987654321', '(11)98054-2255', 'Ricardo Moraes', 'ricardo@gmail.com', '123456', 'cliente');
+(1, '12345678912', '(11)97563-0023', 'Anderson Vanin', 'anderson@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', 'cliente'),
+(2, '21987654321', '(11)98054-2255', 'Ricardo Moraes', 'ricardo@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', 'cliente');
 
 -- --------------------------------------------------------
 
@@ -84,10 +84,10 @@ CREATE TABLE `cadastro_vendedor` (
 --
 
 INSERT INTO `cadastro_vendedor` (`id_vendedor`, `cpf_vendedor`, `telefone_vendedor`, `nome_vendedor`, `email_vendedor`, `senha_vendedor`) VALUES
-(1, '124.701.218-69', '(11)91912-2207', 'França Bardella', 'franca.bardella@email.com', 'senha456'),
-(2, '427.566.812-13', '(11)99971-2510', 'Filha do Hoender Rodrigues', 'hoender.rodrigues@email.com', 'senha789'),
-(3, '458.256.156-09', '(11)91567-2033', 'Pigmeu Garcia', 'pigmeu.garcia@email.com', 'senha123'),
-(4, '462.903.475-96', '(11)95623-0789', 'Bolivia Gama', 'bolivia.gama@email.com', 'senha321');
+(1, '124.701.218-69', '(11)91912-2207', 'França Bardella', 'franca.bardella@email.com', '3d7fcc75ff6bfcbc40127078aa3760d5'),
+(2, '427.566.812-13', '(11)99971-2510', 'Filha do Hoender Rodrigues', 'hoender.rodrigues@email.com', '2de3dca5a6f506661af5884c103524f4'),
+(3, '458.256.156-09', '(11)91567-2033', 'Pigmeu Garcia', 'pigmeu.garcia@email.com', 'e7d80ffeefa212b7c5c55700e4f7193e'),
+(4, '462.903.475-96', '(11)95623-0789', 'Bolivia Gama', 'bolivia.gama@email.com', 'd25230d6d94cf861be33a5e922fca98a');
 
 -- --------------------------------------------------------
 
