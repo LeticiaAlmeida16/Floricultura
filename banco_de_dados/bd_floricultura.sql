@@ -19,9 +19,13 @@ SET time_zone = "+00:00";
 
 --
 -- Banco de dados: `bd_floricultura`
+--
+
 CREATE DATABASE IF NOT EXISTS `bd_floricultura` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 USE `bd_floricultura`;
--- Estrutura para tabela `cadastro_adm`
+
+--
+-- Estrutura da tabela `cadastro_adm`
 --
 
 CREATE TABLE `cadastro_adm` (
@@ -34,7 +38,7 @@ CREATE TABLE `cadastro_adm` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Despejando dados para a tabela `cadastro_adm`
+-- INSERT de dados da tabela `cadastro_adm`
 --
 
 INSERT INTO `cadastro_adm` (`id_adm`, `telefone_adm`, `email_adm`, `cpf_adm`, `nome_adm`, `senha_adm`) VALUES
@@ -43,7 +47,7 @@ INSERT INTO `cadastro_adm` (`id_adm`, `telefone_adm`, `email_adm`, `cpf_adm`, `n
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `cadastro_cliente`
+-- Estrutura da tabela `cadastro_cliente`
 --
 
 CREATE TABLE `cadastro_cliente` (
@@ -57,7 +61,7 @@ CREATE TABLE `cadastro_cliente` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Despejando dados para a tabela `cadastro_cliente`
+-- INSERT de dados da tabela `cadastro_cliente`
 --
 
 INSERT INTO `cadastro_cliente` (`id_cliente`, `cpf_cliente`, `telefone_cliente`, `nome_cliente`, `email_cliente`, `senha_cliente`, `tipo`) VALUES
@@ -67,7 +71,7 @@ INSERT INTO `cadastro_cliente` (`id_cliente`, `cpf_cliente`, `telefone_cliente`,
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `cadastro_vendedor`
+-- Estrutura da tabela `cadastro_vendedor`
 --
 
 CREATE TABLE `cadastro_vendedor` (
@@ -80,7 +84,7 @@ CREATE TABLE `cadastro_vendedor` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Despejando dados para a tabela `cadastro_vendedor`
+-- INSERT de dados da tabela `cadastro_vendedor`
 --
 
 INSERT INTO `cadastro_vendedor` (`id_vendedor`, `cpf_vendedor`, `telefone_vendedor`, `nome_vendedor`, `email_vendedor`, `senha_vendedor`) VALUES
@@ -92,7 +96,7 @@ INSERT INTO `cadastro_vendedor` (`id_vendedor`, `cpf_vendedor`, `telefone_vended
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `comentarios`
+-- Estrutura da tabela `comentarios`
 --
 
 CREATE TABLE `comentarios` (
@@ -103,7 +107,7 @@ CREATE TABLE `comentarios` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Despejando dados para a tabela `comentarios`
+-- INSERT de dados da tabela `comentarios`
 --
 
 INSERT INTO `comentarios` (`id_comentario`, `conteudo`, `id_cliente`, `nota`) VALUES
@@ -111,7 +115,7 @@ INSERT INTO `comentarios` (`id_comentario`, `conteudo`, `id_cliente`, `nota`) VA
 (7, 'Belas flores', 1, 10);
 
 --
--- Estrutura para tabela `estoque_flores`
+-- Estrutura da tabela `estoque_flores`
 --
 
 CREATE TABLE `estoque_flores` (
@@ -123,7 +127,7 @@ CREATE TABLE `estoque_flores` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Despejando dados para a tabela `estoque_flores`
+-- INSERT de dados da tabela `estoque_flores`
 --
 
 INSERT INTO `estoque_flores` (`id_flor`, `nome_flor`, `quantidade_flor`, `preco_flor`, `imagem_flor`) VALUES
@@ -187,115 +191,115 @@ INSERT INTO `estoque_flores` (`id_flor`, `nome_flor`, `quantidade_flor`, `preco_
 (58, 'Flor de Capuchinha', 4, 3.1, 'imgs/Flores/flor_de_capuchinha.jpg'),
 (59, 'Flor de Amor-perfeito', 5, 1.5, 'imgs/Flores/flor_de_amor-perfeito.jpg'),
 (60, 'Flor de Calêndula', 6, 2.6, 'imgs/Flores/flor_de_calendula.jpg'),
-(61, 'Flor de Nepenta', 2, 4.1, 'imgs/Flores/logo.png'),
-(62, 'Flor de Dama-da-noite', 7, 3, 'imgs/Flores/logo.png'),
-(63, 'Flor de Laranjeira', 10, 2.8, 'imgs/Flores/logo.png'),
-(64, 'Flor de Açafrão', 15, 4.5, 'imgs/Flores/logo.png'),
-(65, 'Flor de Malva', 11, 2, 'imgs/Flores/logo.png'),
-(66, 'Flor de Peperômia', 9, 1.9, 'imgs/Flores/logo.png'),
-(67, 'Flor de Acalifa', 12, 3.2, 'imgs/Flores/logo.png'),
-(68, 'Flor de Amaryllis', 20, 5, 'imgs/Flores/logo.png'),
-(69, 'Flor de Trevo', 8, 2.3, 'imgs/Flores/logo.png'),
-(70, 'Flor de Coração-sangue', 16, 2.5, 'imgs/Flores/logo.png'),
-(71, 'Flor de Sinfonia', 18, 3, 'imgs/Flores/logo.png'),
-(72, 'Flor de Flor-de-maio', 13, 2.7, 'imgs/Flores/logo.png'),
-(73, 'Flor de Crotalária', 19, 1.8, 'imgs/Flores/logo.png'),
-(74, 'Flor de Escabiose', 21, 2.6, 'imgs/Flores/logo.png'),
-(75, 'Flor de Cravina', 17, 2.9, 'imgs/Flores/logo.png'),
-(76, 'Flor de Gardênia', 14, 4, 'imgs/Flores/logo.png'),
-(77, 'Flor de Suculenta Verde', 12, 3.5, 'imgs/Flores/logo.png'),
-(78, 'Flor de Pothos', 8, 1.8, 'imgs/Flores/logo.png'),
-(79, 'Flor de Pansy', 15, 2.9, 'imgs/Flores/logo.png'),
-(80, 'Flor de Trapoeraba', 10, 3, 'imgs/Flores/logo.png'),
-(81, 'Flor de Falsa-azaleia', 4, 2.2, 'imgs/Flores/logo.png'),
-(82, 'Flor de Flor-de-páscoa', 3, 2.6, 'imgs/Flores/logo.png'),
-(83, 'Flor de Favo-de-mel', 6, 1.9, 'imgs/Flores/logo.png'),
-(84, 'Flor de Heracleum', 2, 3.1, 'imgs/Flores/logo.png'),
-(85, 'Flor de Papoila', 5, 2.4, 'imgs/Flores/logo.png'),
-(86, 'Flor de Fritillária', 7, 4.5, 'imgs/Flores/logo.png'),
-(87, 'Flor de Talinum', 13, 2.9, 'imgs/Flores/logo.png'),
-(88, 'Flor de Rosinha', 9, 1.8, 'imgs/Flores/logo.png'),
-(89, 'Flor de Salvia', 12, 3.3, 'imgs/Flores/logo.png'),
-(90, 'Flor de Clívia', 10, 2.7, 'imgs/Flores/logo.png'),
-(91, 'Flor de Pérgula', 15, 4, 'imgs/Flores/logo.png'),
-(92, 'Flor de Espatódia', 11, 3.5, 'imgs/Flores/logo.png'),
-(93, 'Flor de Calathea', 8, 1.9, 'imgs/Flores/logo.png'),
-(94, 'Flor de Alocásia', 6, 4.1, 'imgs/Flores/logo.png'),
-(95, 'Flor de Guzmânia', 7, 2.3, 'imgs/Flores/logo.png'),
-(96, 'Flor de Canteiro', 10, 3.2, 'imgs/Flores/logo.png'),
-(97, 'Flor de Crássula', 14, 2.5, 'imgs/Flores/logo.png'),
-(98, 'Flor de Talinão', 11, 3, 'imgs/Flores/logo.png'),
-(99, 'Flor de Monstera', 9, 4.5, 'imgs/Flores/logo.png'),
-(100, 'Flor de Tigridia', 12, 3.6, 'imgs/Flores/logo.png');
+(61, 'Flor de Nepenta', 2, 4.1, 'imgs/Flores/flor_de_nepenta.jpg'),
+(62, 'Flor de Dama-da-noite', 7, 3, 'imgs/Flores/flor_de_dama-da-noite.jpg'),
+(63, 'Flor de Laranjeira', 10, 2.8, 'imgs/Flores/flor_de_laranjeira.jpg'),
+(64, 'Flor de Açafrão', 15, 4.5, 'imgs/Flores/flor_de_acafrao.jpg'),
+(65, 'Flor de Malva', 11, 2, 'imgs/Flores/flor_de_malva.jpg'),
+(66, 'Flor de Peperômia', 9, 1.9, 'imgs/Flores/flor_de_peperomia.jpg'),
+(67, 'Flor de Acalifa', 12, 3.2, 'imgs/Flores/flor_de_acalifa.jpg'),
+(68, 'Flor de Amaryllis', 20, 5, 'imgs/Flores/flor_de_amaryllis.jpg'),
+(69, 'Flor de Trevo', 8, 2.3, 'imgs/Flores/flor_de_trevo.jpg'),
+(70, 'Flor de Coração-sangue', 16, 2.5, 'imgs/Flores/flor_de_coracao-sangue.jpg'),
+(71, 'Flor de Sinfonia', 18, 3, 'imgs/Flores/flor_de_sinfonia.jpg'),
+(72, 'Flor de maio espanhola', 13, 2.7, 'imgs/Flores/flor_de_flor-de-maio.jpg'),
+(73, 'Flor de Crotalária', 19, 1.8, 'imgs/Flores/flor_de_crotalaria.jpg'),
+(74, 'Flor de Escabiose', 21, 2.6, 'imgs/Flores/flor_de_escabiose.jpg'),
+(75, 'Flor de Cravina', 17, 2.9, 'imgs/Flores/flor_de_cravina.jpg'),
+(76, 'Flor de Gardênia', 14, 4, 'imgs/Flores/flor_de_gardenia.jpg'),
+(77, 'Flor de Suculenta Verde', 12, 3.5, 'imgs/Flores/flor_de_suculenta_verde.jpg'),
+(78, 'Flor de Pothos', 8, 1.8, 'imgs/Flores/flor_de_pothos.jpg'),
+(79, 'Flor de Pansy', 15, 2.9, 'imgs/Flores/flor_de_pansy.jpg'),
+(80, 'Flor de Trapoeraba', 10, 3, 'imgs/Flores/flor_de_trapoeraba.jpg'),
+(81, 'Flor de Falsa-azaleia', 4, 2.2, 'imgs/Flores/flor_de_falsa-azaleia.jpg'),
+(82, 'Flor de Flor-de-páscoa', 3, 2.6, 'imgs/Flores/flor_de_flor-de-pascoa.jpg'),
+(83, 'Flor de Favo-de-mel', 6, 1.9, 'imgs/Flores/flor_de_favo-de-mel.jpg'),
+(84, 'Flor de Heracleum', 2, 3.1, 'imgs/Flores/flor_de_heracleum.jpg'),
+(85, 'Flor de Papoila', 5, 2.4, 'imgs/Flores/flor_de_papoila.jpg'),
+(86, 'Flor de Fritillária', 7, 4.5, 'imgs/Flores/flor_de_fritillaria.jpg'),
+(87, 'Flor de Talinum', 13, 2.9, 'imgs/Flores/flor_de_talinum.jpg'),
+(88, 'Flor de Rosinha', 9, 1.8, 'imgs/Flores/flor_de_rosinha.jpg'),
+(89, 'Flor de Salvinha', 12, 3.3, 'imgs/Flores/flor_de_salvinha.jpg'),
+(90, 'Flor de Clívia', 10, 2.7, 'imgs/Flores/flor_de_clivia.jpg'),
+(91, 'Flor de Pérgula', 15, 4, 'imgs/Flores/flor_de_pergula.jpg'),
+(92, 'Flor de Espatódia', 11, 3.5, 'imgs/Flores/flor_de_espatodia.jpg'),
+(93, 'Flor de Calathea', 8, 1.9, 'imgs/Flores/flor_de_calathea.jpg'),
+(94, 'Flor de Alocásia', 6, 4.1, 'imgs/Flores/flor_de_alocasia.jpg'),
+(95, 'Flor de Guzmânia', 7, 2.3, 'imgs/Flores/flor_de_guzmania.jpg'),
+(96, 'Flor de Canteiro', 10, 3.2, 'imgs/Flores/flor_de_canteiro.jpg'),
+(97, 'Flor de Crássula', 14, 2.5, 'imgs/Flores/flor_de_crassula.jpg'),
+(98, 'Flor de Talinão', 11, 3, 'imgs/Flores/flor_de_talinao.jpg'),
+(99, 'Flor de Monstera', 9, 4.5, 'imgs/Flores/flor_de_monstera.jpg'),
+(100, 'Flor de Tigridia', 12, 3.6, 'imgs/Flores/flor_de_tigridia.jpg');
 
 -- --------------------------------------------------------
 --
--- Índices de tabela `cadastro_adm`
+-- Índices da tabela `cadastro_adm`
 --
 ALTER TABLE `cadastro_adm`
   ADD PRIMARY KEY (`id_adm`);
 
 --
--- Índices de tabela `cadastro_cliente`
+-- Índices da tabela `cadastro_cliente`
 --
 ALTER TABLE `cadastro_cliente`
   ADD PRIMARY KEY (`id_cliente`);
 
 --
--- Índices de tabela `cadastro_vendedor`
+-- Índices da tabela `cadastro_vendedor`
 --
 ALTER TABLE `cadastro_vendedor`
   ADD PRIMARY KEY (`id_vendedor`);
 
 --
--- Índices de tabela `comentarios`
+-- Índices da tabela `comentarios`
 --
 ALTER TABLE `comentarios`
   ADD PRIMARY KEY (`id_comentario`),
   ADD KEY `id_cliente` (`id_cliente`);
 
 --
--- Índices de tabela `estoque_flores`
+-- Índices da tabela `estoque_flores`
 --
 ALTER TABLE `estoque_flores`
   ADD PRIMARY KEY (`id_flor`);
 
 --
--- AUTO_INCREMENT para tabelas despejadas
+-- AUTO_INCREMENT para tabelas
 --
 
 --
--- AUTO_INCREMENT de tabela `cadastro_adm`
+-- AUTO_INCREMENT da tabela `cadastro_adm`
 --
 ALTER TABLE `cadastro_adm`
   MODIFY `id_adm` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT de tabela `cadastro_cliente`
+-- AUTO_INCREMENT da tabela `cadastro_cliente`
 --
 ALTER TABLE `cadastro_cliente`
   MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT de tabela `cadastro_vendedor`
+-- AUTO_INCREMENT da tabela `cadastro_vendedor`
 --
 ALTER TABLE `cadastro_vendedor`
   MODIFY `id_vendedor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT de tabela `comentarios`
+-- AUTO_INCREMENT da tabela `comentarios`
 --
 ALTER TABLE `comentarios`
   MODIFY `id_comentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT de tabela `estoque_flores`
+-- AUTO_INCREMENT da tabela `estoque_flores`
 --
 ALTER TABLE `estoque_flores`
   MODIFY `id_flor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
 
 --
--- Restrições para tabelas despejadas
+-- Restrições para tabelas
 --
 
 --
