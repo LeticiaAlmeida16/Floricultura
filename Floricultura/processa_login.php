@@ -7,7 +7,7 @@ require('../banco_de_dados/conecta.php');
 
 // Recebe os dados enviados pelo formulário de login
 $email = $_POST['email'];
-$senha = $_POST['senha'];
+$senha = md5($_POST['senha']);
 
 // Consulta SQL para verificar se o usuário é um vendedor
 $consulta_vendedor = "SELECT * FROM cadastro_vendedor WHERE email_vendedor = '$email' AND senha_vendedor = '$senha'";
@@ -41,6 +41,8 @@ if ($isVendedor) {
     header('Location: index.php');
     exit();
 } else {
-    echo "Login inválido. Verifique suas credenciais.";
+    $_SESSION['error'] = 'Usuário ou senha inválidos.';
+    header('Location: Login_v1/index.php'); // Redireciona de volta para a página de login
+    exit();
 }
 ?>

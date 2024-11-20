@@ -57,14 +57,9 @@
 						</button>
 					</div>
 
-					<!-- <div class="text-center p-t-12">
-						<span class="txt1">
-							Esqueceu
-						</span>
-						<a class="txt2" href="#">
-							Login / Senha?
-						</a>
-					</div> -->
+					<div id="error-message" style="display: none; color: red;">
+						<p>Email ou senha incorretos!</p>
+					</div>
 
 					<div class="text-center p-t-136">
 						<a class="txt2" href="../cadastro/insere_cliente.php">
@@ -94,6 +89,18 @@
 			scale: 1.1
 		})
 	</script>
+					<script>
+						// Verifica se existe uma mensagem de erro na sessão
+						<?php if (isset($_SESSION['error'])) { ?>
+							// Exibe a mensagem de erro
+							document.getElementById("error-message").innerHTML = "<?php echo $_SESSION['error']; ?>";
+							document.getElementById("error-message").style.display = "block";
+							// Limpa a mensagem de erro da sessão
+							<?php unset($_SESSION['error']); ?>
+						<?php } ?>
+					</script>
+
+
 <!--===============================================================================================-->
 	<script src="js/main.js"></script>
 
