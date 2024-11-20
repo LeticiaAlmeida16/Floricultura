@@ -224,7 +224,7 @@
 
 .page-header {
     position: relative;
-    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../img/fundo.jpeg);
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../imgs/Papel\ De\ Parede\ Estampa\ Floral.jpg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -512,4 +512,108 @@
     height: 100vh !important;
     }
     }
+
+    /* Configurações Gerais */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #fdfdfd;
+    color: #444;
+}
+
+/* Hero Header */
+.hero-header-sn {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                url('../imgs/Papel\ De\ Parede\ Estampa\ Floral.jpg') center/cover no-repeat;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+}
+
+.hero-header h1 {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+/* Seção Sobre Nós */
+.about-us {
+    padding: 40px 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.about-us h2 {
+    text-align: center;
+    color: #a64d79;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.about-us p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.about-us h3 {
+    color: #a64d79;
+    margin-top: 20px;
+    font-size: 1.5rem;
+}
+
+.about-us ul {
+    list-style: square inside;
+    margin: 20px 0;
+    padding: 0;
+}
+
+.about-us ul li {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: #666;
+}
+
+/* Botão Voltar ao Topo */
+.back-to-top {
+    background-color: #a64d79;
+    color: #fff;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+.back-to-top:hover {
+    background-color: #852e5b;
+}
+
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .hero-header h1 {
+        font-size: 2rem;
+    }
+
+    .about-us {
+        padding: 20px 10px;
+    }
+}
+
     

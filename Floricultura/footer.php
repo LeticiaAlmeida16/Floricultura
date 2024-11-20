@@ -17,7 +17,6 @@
                         <h4 class="text-light mb-3">Por Que Escolher a Luxe Blooms?</h4>
                         <p class="mb-4">Oferecemos flores frescas e arranjos personalizados que iluminam qualquer
                             evento. Venha conhecer!</p>
-                        <a href="#" class="btn border-secondary py-2 px-4 rounded-pill text-primary">Saiba Mais</a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
@@ -31,12 +30,7 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="d-flex flex-column text-start footer-item">
                         <h4 class="text-light mb-3">Minha Conta</h4>
-                       <!--  <a class="btn-link" href="#">Minha Conta</a>
-                        <a class="btn-link" href="#">Detalhes da Compra</a>
-                        <a class="btn-link" href="#">Carrinho de Compras</a>
-                        <a class="btn-link" href="#">Lista de Desejos</a>
-                        <a class="btn-link" href="#">Histórico de Pedidos</a>
-                        <a class="btn-link" href="#">Pedidos Internacionais</a> -->
+                        <a class="btn-link" href="Login_v1/index.html">Minha Conta</a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
