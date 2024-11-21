@@ -30,7 +30,7 @@
 					<img src="images/logo.png" alt="IMG">
 				</div>
 
-				<form  action="../processa_login.php" method="POST" class="login100-form validate-form">
+				<form  action="../processos/proc_login.php" method="POST" class="login100-form validate-form">
 					<span class="login100-form-title">
 						Login
 					</span>

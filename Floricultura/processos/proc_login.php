@@ -3,7 +3,7 @@
 session_start();
 
 // Importa o arquivo de conexão com o banco de dados
-require('../banco_de_dados/conecta.php');
+require('../bd/conecta.php');
 
 // Recebe os dados enviados pelo formulário de login
 $email = $_POST['email'];
@@ -27,7 +27,7 @@ if ($isVendedor) {
     $_SESSION['email'] = $dados_vendedor['email_vendedor'];
     $_SESSION['tipo'] = 'vendedor';
     
-    header('Location: prod_vendedor.php');
+    header('Location: ../estoque.php');
     exit();
 
 } elseif ($isCliente) {
@@ -38,11 +38,11 @@ if ($isVendedor) {
     $_SESSION['email'] = $dados_cliente['email_cliente'];
     $_SESSION['tipo'] = 'cliente';
 
-    header('Location: index.php');
+    header('Location: ../index.php');
     exit();
 } else {
     $_SESSION['error'] = 'Usuário ou senha inválidos.';
-    header('Location: Login_v1/index.php'); // Redireciona de volta para a página de login
+    header('Location: ../Login_v1/index.php'); // Redireciona de volta para a página de login
     exit();
 }
 ?>

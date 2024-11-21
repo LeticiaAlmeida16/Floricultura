@@ -1,6 +1,7 @@
 <?php
 session_start();
-include 'C:\xampp\htdocs\Floricultura/banco_de_dados/conecta.php';
+
+include '../bd/conecta.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Verificar se o usuário está logado e se é um cliente

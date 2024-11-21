@@ -1,6 +1,6 @@
 <?php
 
-    require('../banco_de_dados/conecta.php');
+    require('../bd/conecta.php');
 
     $nome = $_POST['nome_flor'];
     $quantidade = $_POST['quantidade_flor'];
@@ -12,6 +12,6 @@
 
     $conexao -> query($consulta);
 
-    header('Location: prod_vendedor.php');
+    header('Location: ../estoque.php');
 
 ?>

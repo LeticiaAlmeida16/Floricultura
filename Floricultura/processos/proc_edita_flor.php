@@ -1,5 +1,5 @@
 <?php
-    require('../banco_de_dados/conecta.php');
+    require('../bd/conecta.php');
 
     $id = $_GET['id'];
     $nomenovo = $_POST['nomenovo'];
@@ -12,5 +12,5 @@
     $conexao->query($consulta);
 
     //dps direcionar para a prod_vendedor.php
-    header('Location: prod_vendedor.php');
+    header('Location: ../estoque.php');
 ?>

@@ -1,6 +1,6 @@
 <?php
 
-    require('../banco_de_dados/conecta.php');
+    require('../bd/conecta.php');
 
     $nome = $_POST['nome'];
     $email = $_POST['email'];
@@ -15,6 +15,6 @@
 
     $conexao -> query($consulta);
 
-    header('Location: Login_v1/index.php');
+    header('Location: ../Login_v1/index.php');
 
 ?>
