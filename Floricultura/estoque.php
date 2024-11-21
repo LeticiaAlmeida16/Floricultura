@@ -65,7 +65,7 @@
                     <div class="d-flex m-3 me-0">
                    
                     <?php if (isset($_SESSION['nome'])): ?>
-                    <span class="my-auto text-primary fw-bold">Olá, <?php echo htmlspecialchars($_SESSION['nome']); ?></span>
+                    <span class="my-auto text-primary fw-bold">Olá vendedor!</span>
                     <?php else: ?>
 
                     <a href="Login_v1" class="my-auto">

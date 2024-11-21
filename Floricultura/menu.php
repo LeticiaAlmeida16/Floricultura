@@ -10,7 +10,7 @@
         unset($_SESSION['nome']);
         unset($_SESSION['email']);
         unset($_SESSION['tipo']);
-        header('Location: Login_v1/index.php');
+        // header('Location: Login_v1/index.php');
     }
 ?>
 
@@ -70,16 +70,16 @@
                     </div>
                     <div class="d-flex m-3 me-0">
                    
-                    <?php if (isset($_SESSION['nome'])): ?>
+                    <!-- <?php if (isset($_SESSION['nome'])): ?>
                     <span class="my-auto text-primary fw-bold">Olá, <?php echo htmlspecialchars($_SESSION['nome']); ?></span>
                     <?php else: ?>
                     <a href="Login_v1" class="my-auto">
                     <i class="fas fa-user fa-2x"></i>
                     </a>
-                    <?php endif; ?>
+                    <?php endif; ?> -->
                     </div>
-                            <a href="processos/proc-logout.php" class="btn btn-outline-secondary ms-3 my-auto">
-                                Voltar
+                            <a href="Login_v1/index.php" class="btn btn-outline-secondary ms-3 my-auto">
+                                Login
                             </a>
                 </div>
             </nav>
