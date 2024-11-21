@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // Inserir comentário e nota no banco
         $query = "INSERT INTO comentarios (conteudo, id_cliente, nota) VALUES ('$conteudo', '$id_cliente', '$nota')";
         if (mysqli_query($conexao, $query)) {
-            header('Location: ../testimonial.php'); // Redirecionar para a página de comentários
+            header('Location: ../depoimentos.php'); // Redirecionar para a página de comentários
             exit();
         } else {
             echo "Erro ao adicionar comentário: " . mysqli_error($conexao);
