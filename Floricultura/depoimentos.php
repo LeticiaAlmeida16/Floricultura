@@ -1,5 +1,6 @@
 <?php
-    include 'C:\xampp\htdocs\Floricultura/banco_de_dados/conecta.php';
+    include 'bd/conecta.php';
+    session_start();
     include 'menu.php';
 ?>
 
@@ -10,7 +11,7 @@
 <div class="modal fade" id="addCommentModal" tabindex="-1" aria-labelledby="addCommentModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form action="comentario/adicionar_comentario.php" method="post">
+            <form action="processos/pro_adiciona_coment.php" method="post">
                 <div class="modal-header">
                     <h5 class="modal-title" id="addCommentModalLabel">Adicionar Comentário</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>

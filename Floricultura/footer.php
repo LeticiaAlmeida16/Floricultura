@@ -23,22 +23,22 @@
                     <div class="d-flex flex-column text-start footer-item">
                         <h4 class="text-light mb-3">Informações da Loja</h4>
                         <a class="btn-link" href="sobrenos.php">Sobre Nós</a>
-                        <a class="btn-link" href="contact.php">Contate-Nos</a>
+                        <a class="btn-link" href="contato.php">Contate-Nos</a>
                         
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="d-flex flex-column text-start footer-item">
                         <h4 class="text-light mb-3">Minha Conta</h4>
-                        <a class="btn-link" href="Login_v1/index.html">Minha Conta</a>
+                        <a class="btn-link" href="index.php">Minha Conta</a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="footer-item">
                         <h4 class="text-light mb-3">Contato</h4>
-                        <p>Endereço: Rua das Orquídeas, 123 - Jardim Botânico, São Paulo</p>
-                        <p>Email: contato@luxeblooms.com</p>
-                        <p>Telefone: +0123 4567 8910</p>
+                        <p>Endereço: R. Bélgica, 88 - Jardim Alvorada, Ribeirão Pires - SP, 09402-060</p>
+                        <p>Email: luxeblooms@gmail.com</p>
+                        <p>Telefone: (11) 99876-5432</p>
                     </div>
                 </div>
             </div>

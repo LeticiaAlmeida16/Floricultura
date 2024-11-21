@@ -1,5 +1,5 @@
 <?php
-    include 'C:\xampp\htdocs\Floricultura/banco_de_dados/conecta.php';
+    include 'bd/conecta.php';
     include 'menu.php';
 ?>
 

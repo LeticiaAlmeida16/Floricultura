@@ -1,6 +1,6 @@
 <?php
-    include 'C:\xampp\htdocs\Floricultura/banco_de_dados/conecta.php';
-    include 'menu.php';
+    include 'bd/conecta.php';
+    include 'menu.php'; 
 ?>
 
     <!-- Hero Start -->
@@ -110,10 +110,7 @@
                                                 <h4>".$dados['nome_flor']."</h4>";
                                         echo "<div class='d-flex justify-content-between flex-lg-wrap'>
                                                 <p class='text-dark fs-5 fw-bold mb-0'> R$".$dados['preco_flor']."</p>";
-                                        echo "<a href='cart.php'
-                                                class='btn border border-secondary rounded-pill px-3 text-primary'><i
-                                                   class='fa fa-shopping-bag me-2 text-primary'></i> Add to
-                                                cart</a>
+                                        echo "
                                         </div>
                                     </div>
                                 </div>
@@ -291,6 +288,10 @@
     <?php
         include 'footer.php';
     ?>
+
+
+
+
 
     <!-- Back to Top -->
     <a href="#" class="btn btn-primary border-3 border-primary rounded-circle back-to-top"><i

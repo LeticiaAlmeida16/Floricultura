@@ -1,5 +1,5 @@
 <?php
-    include '../../banco_de_dados/conecta.php';
+    include '../bd/conecta.php';
 ?>
 
 <!DOCTYPE html>
@@ -37,7 +37,7 @@
             <div class="card card-4">
                 <div class="card-body">
                     <h2 class="title">Inserir Flor</h2>
-                    <form action="../proc_insere_flor.php" method="POST">
+                    <form action="../processos/proc_insere_flor.php" method="POST">
                         <div class="row row-space">
                             <div class="col-2">
                                 <div class="input-group">

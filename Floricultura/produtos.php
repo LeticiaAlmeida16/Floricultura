@@ -1,5 +1,5 @@
 <?php
-    include 'C:\xampp\htdocs\Floricultura/banco_de_dados/conecta.php';
+    include 'bd/conecta.php';
     include 'menu.php';
 ?>
 
@@ -13,7 +13,6 @@
         <!-- Fruits Shop Start-->
         <div class="container-fluid fruite py-5">
             <div class="container py-5">
-                <h1 class="mb-4">Loja</h1>
                 <div class="row g-4">
                     <div class="col-lg-12">
                         <div class="row g-4">

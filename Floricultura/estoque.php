@@ -1,5 +1,17 @@
 <?php
-    include 'C:\xampp\htdocs\Floricultura/banco_de_dados/conecta.php';
+    include 'bd/conecta.php';
+
+    session_start();
+
+    //se diferente de esta preenchido e chama a variavel
+    if((!isset($_SESSION['id_vendedor']) == true) && (!isset($_SESSION['cpf']) == true) && (!isset($_SESSION['nome']) == true) && (!isset($_SESSION['email']) == true) && (!isset($_SESSION['tipo']) == true)){
+        unset($_SESSION['id_vendedor']);
+        unset($_SESSION['cpf']);
+        unset($_SESSION['nome']);
+        unset($_SESSION['email']);
+        unset($_SESSION['tipo']);
+        header('Location: Login_v1/index.php');
+    }
 ?>
 
 <!DOCTYPE html>
@@ -26,6 +38,7 @@
     <!-- Libraries Stylesheet -->
     <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
     <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="imgs/flor.png"/>
 
 
     <!-- Customized Bootstrap Stylesheet -->
@@ -36,13 +49,6 @@
 </head>
 
 <body>
-
-    <!-- Spinner Start -->
-    <!-- <div id="spinner"
-        class="show w-100 vh-100 bg-white position-fixed translate-middle top-50 start-50  d-flex align-items-center justify-content-center">
-        <div class="spinner-grow text-primary" role="status"></div>
-    </div> -->
-    <!-- Spinner End -->
 
     <!-- Navbar start -->
     <div class="container-fluid fixed-top">
@@ -56,18 +62,18 @@
                     <span class="fa fa-bars text-primary"></span>
                 </button>
                 <div class="collapse navbar-collapse bg-white" id="navbarCollapse">
-                    <?php session_start(); ?>
                     <div class="d-flex m-3 me-0">
                    
                     <?php if (isset($_SESSION['nome'])): ?>
                     <span class="my-auto text-primary fw-bold">Olá, <?php echo htmlspecialchars($_SESSION['nome']); ?></span>
                     <?php else: ?>
+
                     <a href="Login_v1" class="my-auto">
                     <i class="fas fa-user fa-2x"></i>
                     </a>
                     <?php endif; ?>
                     </div>
-                            <a href="Login_v1/index.php" class="btn btn-outline-secondary ms-3 my-auto">
+                            <a href="processos/proc-logout.php" class="btn btn-outline-secondary ms-3 my-auto">
                                 Voltar
                             </a>
                 </div>
@@ -83,11 +89,11 @@
 
         <!-- Fruits Shop Start-->
         <div class="container-fluid fruite py-5">
-
+            <a href='cadastro/insere_flor.php' class='btn border border-secondary rounded-pill px-3 text-primary'>
+                <i class='text-primary'></i> Inserir
+            </a>
             <div class="container py-5">
-                <a href='cadastro/insere_flor.php' class='btn border border-secondary rounded-pill px-3 text-primary'>
-                    <i class='text-primary'></i> Inserir
-                </a>
+
                 <div class="row g-4">
                     <div class="col-lg-12">
                         <div class="row g-4">
@@ -115,7 +121,7 @@
                                     echo "<a href='cadastro/edita_flor.php?id=".$dados['id_flor']."''
                                             class='btn border border-secondary rounded-pill px-3 text-primary'><i
                                             class='text-primary'></i> Editar</a>
-                                            <a onClick='return apagar()' href='proc_apaga_flor.php?id=".$dados['id_flor']."'
+                                            <a onClick='return apagar()' href='processos/proc_apaga_flor.php?id=".$dados['id_flor']."'
                                             class='btn border border-secondary rounded-pill px-3 text-primary'><i
                                             class='text-primary'></i> Apagar</a>
                                                     </div>
