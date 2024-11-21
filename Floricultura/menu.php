@@ -1,3 +1,19 @@
+<?php
+    include 'bd/conecta.php';
+
+    session_start();
+
+    //se diferente de esta preenchido e chama a variavel
+    if((!isset($_SESSION['id_cliente']) == true) && (!isset($_SESSION['cpf']) == true) && (!isset($_SESSION['nome']) == true) && (!isset($_SESSION['email']) == true) && (!isset($_SESSION['tipo']) == true)){
+        unset($_SESSION['id_cliente']);
+        unset($_SESSION['cpf']);
+        unset($_SESSION['nome']);
+        unset($_SESSION['email']);
+        unset($_SESSION['tipo']);
+        header('Location: Login_v1/index.php');
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="PT-BR">
 
@@ -18,7 +34,8 @@
     <!-- Icon Font Stylesheet -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-
+    <link rel="icon" type="image/png" href="imgs/flor.png"/>
+    
     <!-- Libraries Stylesheet -->
     <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
     <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
@@ -32,13 +49,6 @@
 </head>
 
 <body>
-
-    <!-- Spinner Start -->
-    <!-- <div id="spinner"
-        class="show w-100 vh-100 bg-white position-fixed translate-middle top-50 start-50  d-flex align-items-center justify-content-center">
-        <div class="spinner-grow text-primary" role="status"></div>
-    </div> -->
-    <!-- Spinner End -->
 
     <!-- Navbar start -->
     <div class="container-fluid fixed-top">
@@ -54,11 +64,10 @@
                 <div class="collapse navbar-collapse bg-white" id="navbarCollapse">
                     <div class="navbar-nav mx-auto">
                         <a href="index.php" class="nav-item nav-link active">Início</a>
-                        <a href="shop.php" class="nav-item nav-link">Produtos</a>
-                        <a href="testimonial.php" class="nav-item nav-link">Depoimentos</a>
-                        <a href="contact.php" class="nav-item nav-link">Contato</a>
+                        <a href="produtos.php" class="nav-item nav-link">Produtos</a>
+                        <a href="depoimentos.php" class="nav-item nav-link">Depoimentos</a>
+                        <a href="contato.php" class="nav-item nav-link">Contato</a>
                     </div>
-                    <?php session_start(); ?>
                     <div class="d-flex m-3 me-0">
                    
                     <?php if (isset($_SESSION['nome'])): ?>
@@ -69,7 +78,7 @@
                     </a>
                     <?php endif; ?>
                     </div>
-                            <a href="Login_v1/index.php" class="btn btn-outline-secondary ms-3 my-auto">
+                            <a href="processos/proc-logout.php" class="btn btn-outline-secondary ms-3 my-auto">
                                 Voltar
                             </a>
                 </div>
