@@ -4,9 +4,12 @@
     session_start();
 
     // Verifica se alguma das sessões não está definida
-    if (!isset($_SESSION['id_vendedor']) || !isset($_SESSION['cpf']) || !isset($_SESSION['nome']) || !isset($_SESSION['email']) || !isset($_SESSION['tipo'])) {
-        // Se alguma não estiver definida, limpa todas as sessões e redireciona
-        session_unset();
+    if((!isset($_SESSION['id_vendedor']) == true) && (!isset($_SESSION['cpf']) == true) && (!isset($_SESSION['nome']) == true) && (!isset($_SESSION['email']) == true) && (!isset($_SESSION['tipo']) == true)){
+        unset($_SESSION['id_vendedor']);
+        unset($_SESSION['cpf']);        
+        unset($_SESSION['nome']);        
+        unset($_SESSION['email']);        
+        unset($_SESSION['tipo']);        
         header('Location: login/index.php');
     }
 ?>
@@ -20,6 +23,8 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
+
+    
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -58,14 +63,11 @@
                     data-bs-target="#navbarCollapse">
                     <span class="fa fa-bars text-primary"></span>
                 </button>
-                <div class="collapse navbar-collapse bg-white" id="navbarCollapse">
-                    <div class="d-flex m-3 me-0">
-                        <span class="my-auto text-primary fw-bold">Olá vendedor!</span>
-                    </div>
-                    <a href="processos/proc-logout.php" class="btn btn-outline-secondary ms-3 my-auto">
-                        Voltar
-                    </a>
-                </div>
+                <?php
+                echo "<span class='my-auto text-primary fw-bold'>Bem-vindo(a), " . htmlspecialchars($_SESSION['nome']) . "!
+                    <a href='processos/proc-logout.php' class='btn btn-outline-secondary ms-3 my-auto'>Logout</a>
+                </span>";
+                ?>
             </nav>
         </div>
     </div>
