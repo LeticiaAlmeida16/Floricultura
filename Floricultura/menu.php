@@ -3,14 +3,10 @@
 
     session_start();
 
-    //se diferente de esta preenchido e chama a variavel
-    if((!isset($_SESSION['id_cliente']) == true) && (!isset($_SESSION['cpf']) == true) && (!isset($_SESSION['nome']) == true) && (!isset($_SESSION['email']) == true) && (!isset($_SESSION['tipo']) == true)){
-        unset($_SESSION['id_cliente']);
-        unset($_SESSION['cpf']);
-        unset($_SESSION['nome']);
-        unset($_SESSION['email']);
-        unset($_SESSION['tipo']);
-        // header('Location: Login_v1/index.php');
+    // Verifica se alguma das sessões não está definida
+    if (!isset($_SESSION['id_cliente']) || !isset($_SESSION['cpf']) || !isset($_SESSION['nome']) || !isset($_SESSION['email']) || !isset($_SESSION['tipo'])) {
+        // Se alguma não estiver definida, limpa todas as sessões
+        session_unset();
     }
 ?>
 
@@ -35,7 +31,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="icon" type="image/png" href="imgs/flor.png"/>
-    
+
     <!-- Libraries Stylesheet -->
     <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
     <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
@@ -68,19 +64,20 @@
                         <a href="depoimentos.php" class="nav-item nav-link">Depoimentos</a>
                         <a href="contato.php" class="nav-item nav-link">Contato</a>
                     </div>
+
                     <div class="d-flex m-3 me-0">
-                   
-                    <!-- <?php if (isset($_SESSION['nome'])): ?>
-                    <span class="my-auto text-primary fw-bold">Olá, <?php echo htmlspecialchars($_SESSION['nome']); ?></span>
-                    <?php else: ?>
-                    <a href="Login_v1" class="my-auto">
-                    <i class="fas fa-user fa-2x"></i>
-                    </a>
-                    <?php endif; ?> -->
+                        <!-- se a sessao estiver ativa e estiver a variavel nome, esta logado -->
+                        <?php
+                        if (isset($_SESSION['nome'])):
+                            echo "<span class='my-auto text-primary fw-bold'>Bem-vindo(a), " . htmlspecialchars($_SESSION['nome']) . "!
+                                <a href='processos/proc-logout.php' class='btn btn-outline-secondary ms-3 my-auto'>Logout</a>
+                                </span>";
+                        ?>
+                        <?php else: ?>
+                            <a href="login/index.php" class="btn btn-outline-secondary ms-3 my-auto">Login</a>
+                        <?php endif; ?>
                     </div>
-                            <a href="Login_v1/index.php" class="btn btn-outline-secondary ms-3 my-auto">
-                                Login
-                            </a>
+
                 </div>
             </nav>
         </div>

@@ -1,6 +1,6 @@
 <?php
     include '../bd/conecta.php';
-    ?>
+?>
 
 <!DOCTYPE html>
 <html lang="pt-br">

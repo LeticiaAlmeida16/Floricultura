@@ -3,14 +3,11 @@
 
     session_start();
 
-    //se diferente de esta preenchido e chama a variavel
-    if((!isset($_SESSION['id_vendedor']) == true) && (!isset($_SESSION['cpf']) == true) && (!isset($_SESSION['nome']) == true) && (!isset($_SESSION['email']) == true) && (!isset($_SESSION['tipo']) == true)){
-        unset($_SESSION['id_vendedor']);
-        unset($_SESSION['cpf']);
-        unset($_SESSION['nome']);
-        unset($_SESSION['email']);
-        unset($_SESSION['tipo']);
-        header('Location: Login_v1/index.php');
+    // Verifica se alguma das sessões não está definida
+    if (!isset($_SESSION['id_vendedor']) || !isset($_SESSION['cpf']) || !isset($_SESSION['nome']) || !isset($_SESSION['email']) || !isset($_SESSION['tipo'])) {
+        // Se alguma não estiver definida, limpa todas as sessões e redireciona
+        session_unset();
+        header('Location: login/index.php');
     }
 ?>
 
@@ -38,7 +35,7 @@
     <!-- Libraries Stylesheet -->
     <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
     <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link rel="icon" type="image/png" href="imgs/flor.png"/>
+    <link rel="icon" type="image/png" href="imgs/flor.png" />
 
 
     <!-- Customized Bootstrap Stylesheet -->
@@ -63,65 +60,58 @@
                 </button>
                 <div class="collapse navbar-collapse bg-white" id="navbarCollapse">
                     <div class="d-flex m-3 me-0">
-                   
-                    <?php if (isset($_SESSION['nome'])): ?>
-                    <span class="my-auto text-primary fw-bold">Olá vendedor!</span>
-                    <?php else: ?>
-
-                    <a href="Login_v1" class="my-auto">
-                    <i class="fas fa-user fa-2x"></i>
-                    </a>
-                    <?php endif; ?>
+                        <span class="my-auto text-primary fw-bold">Olá vendedor!</span>
                     </div>
-                            <a href="processos/proc-logout.php" class="btn btn-outline-secondary ms-3 my-auto">
-                                Voltar
-                            </a>
+                    <a href="processos/proc-logout.php" class="btn btn-outline-secondary ms-3 my-auto">
+                        Voltar
+                    </a>
                 </div>
             </nav>
         </div>
     </div>
     <!-- Navbar End -->
+
     <!-- Single Page Header start -->
-        <div class="container-fluid page-header py-5">
-            <h1 class="text-center text-white display-6">Estoque</h1>
-        </div>
-        <!-- Single Page Header End -->
+    <div class="container-fluid page-header py-5">
+        <h1 class="text-center text-white display-6">Estoque</h1>
+    </div>
+    <!-- Single Page Header End -->
 
-        <!-- Fruits Shop Start-->
-        <div class="container-fluid fruite py-5">
-            <a href='cadastro/insere_flor.php' class='btn border border-secondary rounded-pill px-3 text-primary'>
-                <i class='text-primary'></i> Inserir
-            </a>
-            <div class="container py-5">
+    <!-- Fruits Shop Start-->
+    <div class="container-fluid fruite py-5">
+        <a href='cadastro/insere_flor.php' class='btn border border-secondary rounded-pill px-3 text-primary'>
+            <i class='text-primary'></i> Inserir
+        </a>
+        <div class="container py-5">
 
-                <div class="row g-4">
-                    <div class="col-lg-12">
-                        <div class="row g-4">
-                            
-                        </div>
-                        <div class="row g-4 justify-content-around">
-                            <div class="col-lg-9">
-                                <div class="row g-4 justify-content-center">
-                                    
+            <div class="row g-4">
+                <div class="col-lg-12">
+                    <div class="row g-4">
+
+                    </div>
+                    <div class="row g-4 justify-content-around">
+                        <div class="col-lg-9">
+                            <div class="row g-4 justify-content-center">
+
                                 <?php
                                 $sql = "SELECT * FROM estoque_flores";
-                                $consulta = $conexao->query($sql); 
-                                while($dados = $consulta->fetch_assoc()){
+                                $consulta = $conexao->query($sql);
+                                while ($dados = $consulta->fetch_assoc()) {
 
                                     echo "<div class='col-12 col-sm-6 col-lg-3'> <!-- Ajuste nas classes Bootstrap --> 
                                             <div class='rounded position-relative fruite-item' style='width: 100%;'>
-                                                <div class='fruite-img'>";                                        
-                                    echo "<img src='".$dados['imagem_flor']."' class='img-fluid w-100 rounded-top' alt=''>";
+                                                <div class='fruite-img'>";
+                                    echo "<img src='" . $dados['imagem_flor'] . "' class='img-fluid w-100 rounded-top' alt=''>";
                                     echo "</div>";
                                     // echo "<div class='text-white bg-secondary px-3 py-1 rounded position-absolute' style='top: 10px; left: 10px;'>Buquê</div>";
                                     echo "<div class='p-4 border border-secondary border-top-0 rounded-bottom'>
-                                            <h4>".$dados['nome_flor']."</h4>";
+                                            <h4>" . $dados['nome_flor'] . "</h4>";
                                     echo "<div class='d-flex justify-content-between flex-lg-wrap'>
-                                            <p class='text-dark fs-5 fw-bold mb-0'> R$".$dados['preco_flor']."</p>";
-                                    echo "<a href='cadastro/edita_flor.php?id=".$dados['id_flor']."''
+                                            <p class='text-dark fs-5 fw-bold mb-0'> R$" . $dados['preco_flor'] . "</p>";
+                                    echo "<a href='cadastro/edita_flor.php?id=" . $dados['id_flor'] . "''
                                             class='btn border border-secondary rounded-pill px-3 text-primary'><i
                                             class='text-primary'></i> Editar</a>
-                                            <a onClick='return apagar()' href='processos/proc_apaga_flor.php?id=".$dados['id_flor']."'
+                                            <a onClick='return apagar()' href='processos/proc_apaga_flor.php?id=" . $dados['id_flor'] . "'
                                             class='btn border border-secondary rounded-pill px-3 text-primary'><i
                                             class='text-primary'></i> Apagar</a>
                                                     </div>
@@ -136,27 +126,26 @@
                                         border-radius: 8px 8px 0 0;
                                     }
                                     </style>";
-
-                                }  
-                                ?>   
-                                </div>
+                                }
+                                ?>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Fruits Shop End-->
+    </div>
+    <!-- Fruits Shop End-->
 
 
-        <?php
-            include 'footer.php';
-        ?>
+    <?php
+    include 'footer.php';
+    ?>
 
-        <!-- Back to Top -->
-        <a href="#" class="btn btn-primary border-3 border-primary rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>   
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-primary border-3 border-primary rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>
 
-        
+
     <!-- JavaScript Libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -169,10 +158,10 @@
     <script src="js/main.js"></script>
     <script>
         //funcao para mensagem de seguranca
-            function apagar() {
-                return confirm("Tem certeza que deseja apagar a flor?")
-            }
-        </script>
-    </body>
+        function apagar() {
+            return confirm("Tem certeza que deseja apagar a flor?")
+        }
+    </script>
+</body>
 
 </html>

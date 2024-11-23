@@ -42,7 +42,7 @@ if ($isVendedor) {
     exit();
 } else {
     $_SESSION['error'] = 'Usuário ou senha inválidos.';
-    header('Location: ../Login_v1/index.php'); // Redireciona de volta para a página de login
+    header('Location: ../login/index.php'); // Redireciona de volta para a página de login
     exit();
 }
 ?>
