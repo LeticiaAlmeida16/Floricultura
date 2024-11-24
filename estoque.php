@@ -105,9 +105,8 @@
                                                 <div class='fruite-img'>";
                                     echo "<img src='" . $dados['imagem_flor'] . "' class='img-fluid w-100 rounded-top' alt=''>";
                                     echo "</div>";
-                                    // echo "<div class='text-white bg-secondary px-3 py-1 rounded position-absolute' style='top: 10px; left: 10px;'>Buquê</div>";
                                     echo "<div class='p-4 border border-secondary border-top-0 rounded-bottom'>
-                                            <h4>" . $dados['nome_flor'] . "</h4>";
+                                            <h4>" . $dados['nome_flor'] . "</h4>";     
                                     echo "<div class='d-flex justify-content-between flex-lg-wrap'>
                                             <p class='text-dark fs-5 fw-bold mb-0'> R$" . $dados['preco_flor'] . "</p>";
                                     echo "<a href='cadastro/edita_flor.php?id=" . $dados['id_flor'] . "''
