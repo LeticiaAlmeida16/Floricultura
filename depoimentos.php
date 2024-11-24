@@ -49,7 +49,7 @@ $id_cliente_logado = $_SESSION['id_cliente'];
 <div class="modal fade" id="editCommentModal" tabindex="-1" aria-labelledby="editCommentModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form action="processos/proc_editar_coment.php" method="post">
+            <form action="processos/proc_editar_comentario.php" method="post">
                 <!-- Campo oculto para armazenar o ID do comentário a ser editado -->
                 <input type="hidden" name="id_comentario" id="id_comentario">
                 <!-- Cabeçalho do modal -->
