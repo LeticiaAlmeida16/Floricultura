@@ -1,8 +1,6 @@
 <?php
 // Inclui o arquivo de conexão com o banco de dados
 include 'bd/conecta.php';
-// Inicia a sessão
-session_start();
 // Inclui o menu no topo da página
 include 'menu.php'; 
 // Armazena o ID do cliente logado (se disponível) para uso posterior
@@ -150,3 +148,39 @@ $id_cliente_logado = $_SESSION['id_cliente'];
 // Inclui o rodapé da página
 include 'footer.php';
 ?>
+
+<!-- Back to Top -->
+<a href="#" class="btn btn-primary border-3 border-primary rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>
+
+
+<!-- JavaScript Libraries -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="lib/easing/easing.min.js"></script>
+<script src="lib/waypoints/waypoints.min.js"></script>
+<script src="lib/lightbox/js/lightbox.min.js"></script>
+<script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+<!-- Template Javascript -->
+<script src="js/main.js"></script>
+<script>
+    function openEditModal(commentId) {
+    // Define o ID do comentário no campo oculto
+    document.getElementById('id_comentario').value = commentId;
+
+    // Faz uma requisição AJAX para buscar os dados
+    fetch('processos/buscar_comentario.php?id=' + commentId)
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById('conteudo').value = data.conteudo;
+            document.getElementById('nota').value = data.nota;
+        });
+
+    // Abre o modal
+    const editModal = new bootstrap.Modal(document.getElementById('editCommentModal'));
+    editModal.show();
+}
+</script>
+</body>
+
+</html>
