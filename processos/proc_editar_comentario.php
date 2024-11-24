@@ -13,9 +13,9 @@
         mysqli_stmt_execute($stmt);
 
         if (mysqli_stmt_affected_rows($stmt) > 0) {
-            header('Location: ../index.php?msg=Comentário atualizado com sucesso');
+            header('Location: ../depoimentos.php?msg=Comentário atualizado com sucesso');
         } else {
-            header('Location: ../index.php?msg=Falha ao atualizar comentário');
+            header('Location: ../depoimentos.php?msg=Falha ao atualizar comentário');
         }
     }
 ?>
