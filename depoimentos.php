@@ -51,7 +51,7 @@ $id_cliente_logado = $_SESSION['id_cliente'];
 <div class="modal fade" id="editCommentModal" tabindex="-1" aria-labelledby="editCommentModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form action="processos/proc_editar_coment.php" method="post">
+            <form action="processos/proc_editar_comentario.php" method="post">
                 <!-- Campo oculto para armazenar o ID do comentário a ser editado -->
                 <input type="hidden" name="id_comentario" id="id_comentario">
                 <!-- Cabeçalho do modal -->
@@ -150,3 +150,39 @@ $id_cliente_logado = $_SESSION['id_cliente'];
 // Inclui o rodapé da página
 include 'footer.php';
 ?>
+
+<!-- Back to Top -->
+<a href="#" class="btn btn-primary border-3 border-primary rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>
+
+
+<!-- JavaScript Libraries -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="lib/easing/easing.min.js"></script>
+<script src="lib/waypoints/waypoints.min.js"></script>
+<script src="lib/lightbox/js/lightbox.min.js"></script>
+<script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+<!-- Template Javascript -->
+<script src="js/main.js"></script>
+<script>
+    function openEditModal(commentId) {
+    // Define o ID do comentário no campo oculto
+    document.getElementById('id_comentario').value = commentId;
+
+    // Faz uma requisição AJAX para buscar os dados
+    fetch('processos/buscar_comentario.php?id=' + commentId)
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById('conteudo').value = data.conteudo;
+            document.getElementById('nota').value = data.nota;
+        });
+
+    // Abre o modal
+    const editModal = new bootstrap.Modal(document.getElementById('editCommentModal'));
+    editModal.show();
+}
+</script>
+</body>
+
+</html>
