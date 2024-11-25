@@ -1,17 +1,17 @@
 <?php
     include 'bd/conecta.php';
 
-    session_start();
+    // session_start();
 
     // Verifica se alguma das sessões não está definida
-    if((!isset($_SESSION['id_vendedor']) == true) && (!isset($_SESSION['cpf']) == true) && (!isset($_SESSION['nome']) == true) && (!isset($_SESSION['email']) == true) && (!isset($_SESSION['tipo']) == true)){
-        unset($_SESSION['id_vendedor']);
-        unset($_SESSION['cpf']);        
-        unset($_SESSION['nome']);        
-        unset($_SESSION['email']);        
-        unset($_SESSION['tipo']);        
-        header('Location: login/index.php');
-    }
+    // if((!isset($_SESSION['id_vendedor']) == true) && (!isset($_SESSION['cpf']) == true) && (!isset($_SESSION['nome']) == true) && (!isset($_SESSION['email']) == true) && (!isset($_SESSION['tipo']) == true)){
+    //     unset($_SESSION['id_vendedor']);
+    //     unset($_SESSION['cpf']);        
+    //     unset($_SESSION['nome']);        
+    //     unset($_SESSION['email']);        
+    //     unset($_SESSION['tipo']);        
+    //     header('Location: login/index.php');
+    // }
 ?>
 
 <!DOCTYPE html>
@@ -137,11 +137,6 @@
         </div>
     </div>
     <!-- Fruits Shop End-->
-
-
-    <?php
-    include 'footer.php';
-    ?>
 
     <!-- Back to Top -->
     <a href="#" class="btn btn-primary border-3 border-primary rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>
