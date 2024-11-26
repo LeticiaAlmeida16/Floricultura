@@ -132,9 +132,10 @@
                                                     echo "<td>".$dados['cpf_vendedor']."</td>";
                                                     // ? diz q vai pegar mais uma informacao, no caso o id vai mostrar na barra
                                                     echo "<td>
-                                                        <a class='btn btn-sm btn-outline-primary px-3  rounded-pill' href='../processos/proc_edita_vendedor.php?id=".$dados['id_vendedor']."'  >ATUALIZAR</a>        
+                                                        <a class='btn btn-sm btn-outline-primary px-3  rounded-pill' href='cadastro/edita_vendedor.php?id=".$dados['id_vendedor']."'  >ATUALIZAR</a>        
                                                         <br>
-                                                        <a class='btn btn-sm btn-outline-danger px-3  rounded-pill' onClick='return apagarvendedor()' href='../processos/apaga_vendedor.php?id=".$dados['id_vendedor']."'>APAGAR</a>
+                                                        
+                                                        <a onClick='return apagarVendedor()' href='processos/proc_apaga_vendedor.php?id=".$dados['id_vendedor']."' class='btn btn-sm btn-outline-danger px-3  rounded-pill' >APAGAR</a>
                                                     </td>";
 
                                                     echo "</tr>";
@@ -166,7 +167,6 @@
                                                 <th>E-mail</th>
                                                 <th>Telefone</th>
                                                 <th>CPF</th>
-                                                <th>Opções</th>
                                             </tr>
                                         </thead>
         
@@ -189,11 +189,7 @@
                                                     echo "<td>".$dados['telefone_cliente']."</td>";
                                                     echo "<td>".$dados['cpf_cliente']."</td>";
                                                     // ? diz q vai pegar mais uma informacao, no caso o id vai mostrar na barra
-                                                    echo "<td>
-                                                        <a class='btn btn-sm btn-outline-primary px-3  rounded-pill' href='atualiza_cliente.php?id=".$dados['id_cliente']."'  >ATUALIZAR</a>        
-                                                        <br>
-                                                        <a class='btn btn-sm btn-outline-danger px-3  rounded-pill' onClick='return apagarcliente()' href='processa_delete_cliente.php?id=".$dados['id_cliente']."'>APAGAR</a>
-                                                    </td>";
+                                                   
 
                                                     echo "</tr>";
                                                 }
@@ -228,12 +224,9 @@
     <script src="js/main.js"></script>
     <script>
         //funcao para mensagem de seguranca
-        function apagarCliente() {
-            return confirm("Tem certeza que deseja apagar a flor?")
-        }
 
         function apagarVendedor() {
-            return confirm("Tem certeza que deseja apagar a flor?")
+            return confirm("Tem certeza que deseja apagar o vendedor?")
         }
     </script>
 </body>

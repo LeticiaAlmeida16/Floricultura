@@ -3,14 +3,17 @@
 
     $id = $_GET['id'];
     $nomenovo = $_POST['nomenovo'];
-    $quantidadenova = $_POST['quantidadenova'];
-    $preconovo = $_POST['preconovo'];
+    $telefonenovo = $_POST['telefonenovo'];
+    $emailnovo = $_POST['emailnovo'];
+    $cpfnovo = $_POST['cpfnovo'];
 
     //agr vamos criar a string de update e executar
-    $consulta = "UPDATE estoque_flores SET nome_flor = '$nomenovo', quantidade_flor = '$quantidadenova', preco_flor = '$preconovo'
-    WHERE id_flor = $id";
+    $consulta = "UPDATE cadastro_vendedor SET nome_vendedor = '$nomenovo', telefone_vendedor = '$telefonenovo', email_vendedor = '$emailnovo', cpf_vendedor = '$cpfnovo'
+    WHERE id_vendedor = $id";
+
     $conexao->query($consulta);
 
     //dps direcionar para a prod_vendedor.php
-    header('Location: ../estoque.php');
+    header('Location: ../adm.php');
+
 ?>

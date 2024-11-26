@@ -2,15 +2,15 @@
     include 'bd/conecta.php';
     session_start();
 
-    // Verifica se alguma das sessões não está definida
-    // if((!isset($_SESSION['id_vendedor']) == true) && (!isset($_SESSION['cpf']) == true) && (!isset($_SESSION['nome']) == true) && (!isset($_SESSION['email']) == true) && (!isset($_SESSION['tipo']) == true)){
-    //     unset($_SESSION['id_vendedor']);
-    //     unset($_SESSION['cpf']);        
-    //     unset($_SESSION['nome']);        
-    //     unset($_SESSION['email']);        
-    //     unset($_SESSION['tipo']);        
-    //     header('Location: login/index.php');
-    // }
+    //Verifica se alguma das sessões não está definida
+    if((!isset($_SESSION['id_vendedor']) == true) && (!isset($_SESSION['cpf']) == true) && (!isset($_SESSION['nome']) == true) && (!isset($_SESSION['email']) == true) && (!isset($_SESSION['tipo']) == true)){
+        unset($_SESSION['id_vendedor']);
+        unset($_SESSION['cpf']);        
+        unset($_SESSION['nome']);        
+        unset($_SESSION['email']);        
+        unset($_SESSION['tipo']);        
+        header('Location: login/index.php');
+    }
 ?>
 
 <!DOCTYPE html>

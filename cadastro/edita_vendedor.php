@@ -1,5 +1,11 @@
 <?php
     include '../bd/conecta.php';
+
+    //get pega da URL
+    $id = $_GET['id'];
+    $sql = "SELECT * FROM cadastro_vendedor WHERE id_vendedor = '$id'";
+    $consulta = $conexao->query($sql);
+    $dados = $consulta->fetch_assoc();
 ?>
 
 <!DOCTYPE html>
@@ -28,59 +34,69 @@
 
     <!-- Main CSS-->
     <link href="css/main.css" rel="stylesheet" media="all">
+
+    <!-- Bibliotecas para fazer a máscara -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
 </head>
 
 <body>
-
-    <div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
-        <div class="wrapper wrapper--w680">
-            <div class="card card-4">
-                <div class="card-body">
-                    <h2 class="title">Editar Vendedor</h2>
-                    <form action="../processos/proc_edita_vendedor.php" method="POST">
-                        <div class="row row-space">
-                            <div class="col-2">
-                                <div class="input-group">
-                                    <label class="label">Nome</label>
-                                    <input class="input--style-4" type="text" name="nome">
-                                </div>
-                            </div>
-                            <div class="col-2">
-                                <div class="input-group">
-                                    <label class="label">Telefone</label>
-                                    <input class="input--style-4" type="text" name="telefone">
-                                </div>
+<div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
+    <div class="wrapper wrapper--w680">
+        <div class="card card-4">
+            <div class="card-body">
+                <h2 class="title">Editar Vendedor</h2>
+                <form action="../processos/proc_edita_vendedor.php?id=<?php echo $id; ?>" method="POST">
+                    <div class="row row-space">
+                        <div class="col-2">
+                            <div class="input-group">
+                                <label class="label">Nome</label>
+                                <input class="input--style-4" type="text" name="nomenovo" value="<?php echo $dados['nome_vendedor']; ?>" required>
                             </div>
                         </div>
-                        <div class="row row-space">
-                            <div class="col-2">
-                                <div class="input-group">
-                                    <label class="label">Email</label>
-                                    <input class="input--style-4" type="email" name="email">
-                                </div>
-                            </div>
-                            <div class="col-2">
-                                <div class="input-group">
-                                    <label class="label">Senha</label>
-                                    <input class="input--style-4" type="password" name="senha">
-                                </div>
+                        <div class="col-2">
+                            <div class="input-group">
+                                <label class="label">Telefone</label>
+                                <input class="input--style-4" type="text" name="telefonenovo" value="<?php echo $dados['telefone_vendedor']; ?>" id="telefone" required>
                             </div>
                         </div>
-                        <div class="input-group">
-                            <label class="label">CPF</label>
-                            <input class="input--style-4" type="text" name="cpf">
+                    </div>
+                    <div class="row row-space">
+                        <div class="col-2">
+                            <div class="input-group">
+                                <label class="label">Email</label>
+                                <input class="input--style-4" type="email" name="emailnovo" value="<?php echo $dados['email_vendedor']; ?>" required>
+                            </div>
                         </div>
-                        <div class="p-t-15">
-                            <button class="btn btn--radius-2 btn--pink" type="submit">Criar</button>
-                        </div>
-                    </form>
-                </div>
+                    </div>
+                    <div class="input-group">
+                        <label class="label">CPF</label>
+                        <input class="input--style-4" type="text" name="cpfnovo" value="<?php echo $dados['cpf_vendedor']; ?>" id="cpf" required>
+                    </div>
+                    <div class="p-t-15">
+                        <button class="btn btn--radius-2 btn--pink" type="submit">Editar</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
+</div>
 
-    <!-- Jquery JS-->
-    <script src="vendor/jquery/jquery.min.js"></script>
+<script>
+    $(document).ready(function() {
+        // Máscara para telefone no formato (11) 91234-5678
+        $('#telefone').mask('(00) 00000-0000', {
+            placeholder: "(11) 9XXXX-XXXX"
+        });
+
+        // Máscara para CPF no formato 123.456.789-01
+        $('#cpf').mask('000.000.000-00', {
+            placeholder: "000.000.000-00"
+        });
+    });
+</script>
+
+
     <!-- Vendor JS-->
     <script src="vendor/select2/select2.min.js"></script>
     <script src="vendor/datepicker/moment.min.js"></script>
@@ -89,7 +105,6 @@
     <!-- Main JS-->
     <script src="js/global.js"></script>
 
-</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</body>
 
 </html>
-<!-- end document-->

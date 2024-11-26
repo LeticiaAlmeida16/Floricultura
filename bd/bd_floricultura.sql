@@ -42,7 +42,7 @@ CREATE TABLE `cadastro_adm` (
 --
 
 INSERT INTO `cadastro_adm` (`id_adm`, `telefone_adm`, `email_adm`, `cpf_adm`, `nome_adm`, `senha_adm`) VALUES
-(1, '(11)95243-9006', 'chefe.aumeidan@email.com', '529.160.128-00', 'Chefe Aumeidan', 'senhaAdmChefe');
+(1, '(11)95243-9006', 'chefe.aumeidan@email.com', '529.160.128-00', 'Chefe Lele', 'senhaAdmChefe');
 
 -- --------------------------------------------------------
 
@@ -89,8 +89,8 @@ CREATE TABLE `cadastro_vendedor` (
 
 INSERT INTO `cadastro_vendedor` (`id_vendedor`, `cpf_vendedor`, `telefone_vendedor`, `nome_vendedor`, `email_vendedor`, `senha_vendedor`) VALUES
 (1, '124.701.218-69', '(11)91912-2207', 'França Bardella', 'franca.bardella@email.com', '3d7fcc75ff6bfcbc40127078aa3760d5'),
-(2, '427.566.812-13', '(11)99971-2510', 'Filha do Hoender Rodrigues', 'hoender.rodrigues@email.com', '2de3dca5a6f506661af5884c103524f4'),
-(3, '458.256.156-09', '(11)91567-2033', 'Pigmeu Garcia', 'pigmeu.garcia@email.com', 'e7d80ffeefa212b7c5c55700e4f7193e'),
+(2, '427.566.812-13', '(11)99971-2510', 'Rapha Luvi', 'hoender.rodrigues@email.com', '2de3dca5a6f506661af5884c103524f4'),
+(3, '458.256.156-09', '(11)91567-2033', 'Luana Garcia', 'pigmeu.garcia@email.com', 'e7d80ffeefa212b7c5c55700e4f7193e'),
 (4, '462.903.475-96', '(11)95623-0789', 'Bolivia Gama', 'bolivia.gama@email.com', 'd25230d6d94cf861be33a5e922fca98a');
 
 -- --------------------------------------------------------

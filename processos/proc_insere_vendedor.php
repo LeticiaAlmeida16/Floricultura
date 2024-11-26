@@ -10,11 +10,11 @@
     $senha_cripto = md5($_POST['senha']);
     
 
-    $consulta = "INSERT INTO cadastro_cliente (cpf_cliente, telefone_cliente, nome_cliente, email_cliente, senha_cliente) 
+    $consulta = "INSERT INTO cadastro_vendedor (cpf_vendedor, telefone_vendedor, nome_vendedor, email_vendedor, senha_vendedor) 
     VALUES ('$cpf', '$telefone', '$nome', '$email', '$senha_cripto')";
 
     $conexao -> query($consulta);
 
-    header('Location: ../login/index.php');
+    header('Location: ../adm.php');
 
 ?>
