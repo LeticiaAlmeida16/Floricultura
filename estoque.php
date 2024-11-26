@@ -1,7 +1,6 @@
 <?php
     include 'bd/conecta.php';
-
-    // session_start();
+    session_start();
 
     // Verifica se alguma das sessões não está definida
     // if((!isset($_SESSION['id_vendedor']) == true) && (!isset($_SESSION['cpf']) == true) && (!isset($_SESSION['nome']) == true) && (!isset($_SESSION['email']) == true) && (!isset($_SESSION['tipo']) == true)){
@@ -53,24 +52,27 @@
 <body>
 
     <!-- Navbar start -->
-    <div class="container-fluid fixed-top">
-        <div class="container px-0">
-            <nav class="navbar navbar-light bg-white navbar-expand-xl">
-                <a href="index.php" class="navbar-brand">
-                    <h1 class="text-primary display-6">Luxe Blooms</h1>
-                </a>
-                <button class="navbar-toggler py-2 px-3" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarCollapse">
-                    <span class="fa fa-bars text-primary"></span>
-                </button>
+<div class="container-fluid fixed-top">
+    <div class="container px-0">
+        <nav class="navbar navbar-light bg-white navbar-expand-xl">
+            <a href="index.php" class="navbar-brand">
+                <h1 class="text-primary display-6">Luxe Blooms</h1>
+            </a>
+            <button class="navbar-toggler py-2 px-3" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars text-primary"></span>
+            </button>
+            <div class="d-flex ms-auto">
                 <?php
                 echo "<span class='my-auto text-primary fw-bold'>Bem-vindo(a), " . htmlspecialchars($_SESSION['nome']) . "!
-                    <a href='processos/proc-logout.php' class='btn btn-outline-secondary ms-3 my-auto'>Logout</a>
+                    <a href='processos/proc-logout.php' class='btn btn-outline-secondary ms-2'>Logout</a>
                 </span>";
                 ?>
-            </nav>
-        </div>
+            </div>
+        </nav>
     </div>
+</div>
+
     <!-- Navbar End -->
 
     <!-- Single Page Header start -->
