@@ -52,26 +52,28 @@
 
 <body>
 
-    <!-- Navbar start -->
-    <div class="container-fluid fixed-top">
-        <div class="container px-0">
-            <nav class="navbar navbar-light bg-white navbar-expand-xl">
-                <a href="index.php" class="navbar-brand">
-                    <h1 class="text-primary display-6">Luxe Blooms</h1>
-                </a>
-                <button class="navbar-toggler py-2 px-3" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarCollapse">
-                    <span class="fa fa-bars text-primary"></span>
-                </button>
-                <?php
-                echo "<span class='my-auto text-primary fw-bold'>Bem-vindo(a), " . htmlspecialchars($_SESSION['nome']) . "!
-                    <a href='processos/proc-logout.php' class='btn btn-outline-secondary ms-3 my-auto'>Logout</a>
-                </span>";
-                ?>
-            </nav>
+<!-- Navbar start -->
+        <div class="container-fluid fixed-top">
+            <div class="container px-0">
+                <nav class="navbar navbar-light bg-white navbar-expand-xl">
+                    <a href="index.php" class="navbar-brand">
+                        <h1 class="text-primary display-6">Luxe Blooms</h1>
+                    </a>
+                    <button class="navbar-toggler py-2 px-3" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarCollapse">
+                        <span class="fa fa-bars text-primary"></span>
+                    </button>
+                    <div class="d-flex ms-auto">
+                        <?php
+                        echo "<span class='my-auto text-primary fw-bold'>Bem-vindo(a), " . htmlspecialchars($_SESSION['nome']) . "!
+                            <a href='processos/proc-logout.php' class='btn btn-outline-secondary ms-2'>Logout</a>
+                        </span>";
+                        ?>
+                    </div>
+                </nav>
+            </div>
         </div>
-    </div>
-    <!-- Navbar End -->
+<!-- Navbar End -->
 
     <!-- Single Page Header start -->
     <div class="container-fluid page-header py-5">

@@ -10,45 +10,68 @@
 <!-- Single Page Header End -->
 
 
-<!-- Fruits Shop Start-->
+<!-- Fruits Shop Start -->
 <div class="container-fluid fruite py-5">
-    <div class="container py-5">
+    <div class="container">
+        <!-- Search Form Start -->
+        <div class="row mb-4">
+            <div class="col-12" style="padding-bottom: 50px">
+                <form method="GET" action="" class="d-flex align-items-center justify-content-start">
+                    <input type="text" name="pesquisa" class="form-control me-2 w-50" placeholder="Digite o nome da flor" value="<?php echo isset($_GET['pesquisa']) ? htmlspecialchars($_GET['pesquisa']) : ''; ?>">
+                    <button type="submit" class="btn btn-primary">Pesquisar</button>
+                </form>
+            </div>
+        </div>
+        <!-- Search Form End -->
+
         <div class="row g-4">
             <div class="col-lg-12">
                 <div class="row g-4">
-
                 </div>
                 <div class="row g-4 justify-content-around">
                     <div class="col-lg-9">
                         <div class="row g-4 justify-content-around">
 
                             <?php
-                            $sql = "SELECT * FROM estoque_flores";
-                            $consulta = $conexao->query($sql);
-                            while ($dados = $consulta->fetch_assoc()) {
+                            // Verifica se há um termo de pesquisa
+                            $pesquisa = isset($_GET['pesquisa']) ? $conexao->real_escape_string($_GET['pesquisa']) : '';
 
-                                echo "<div class='col-12 col-sm-6 col-lg-3'> <!-- Ajuste nas classes Bootstrap --> 
-                                            <div class='rounded position-relative fruite-item' style='width: 100%;'>
-                                                <div class='fruite-img'>";
-                                echo "<img src='" . $dados['imagem_flor'] . "' class='img-fluid w-100 rounded-top' alt=''>";
-                                echo "</div>";
-                                // echo "<div class='text-white bg-secondary px-3 py-1 rounded position-absolute' style='top: 10px; left: 10px;'>Buquê</div>";
-                                echo "<div class='p-4 border border-secondary border-top-0 rounded-bottom'>
-                                            <h4>" . $dados['nome_flor'] . "</h4>";
-                                echo "<div class='d-flex justify-content-between flex-lg-wrap'>
-                                            <p class='text-dark fs-5 fw-bold mb-0'> R$" . $dados['preco_flor'] . "</p>";
-                                echo "</div>
+                            // Monta a query com base na pesquisa
+                            $sql = "SELECT * FROM estoque_flores";
+                            if ($pesquisa) {
+                                $sql .= " WHERE nome_flor LIKE '%$pesquisa%'";
+                            }
+
+                            // Executa a consulta
+                            $consulta = $conexao->query($sql);
+
+                            // Exibe os resultados
+                            if ($consulta->num_rows > 0) {
+                                while ($dados = $consulta->fetch_assoc()) {
+                                    echo "<div class='col-12 col-sm-6 col-lg-3'> <!-- Ajuste nas classes Bootstrap --> 
+                                                <div class='rounded position-relative fruite-item' style='width: 100%;'>
+                                                    <div class='fruite-img'>";
+                                    echo "<img src='" . $dados['imagem_flor'] . "' class='img-fluid w-100 rounded-top' alt=''>";
+                                    echo "</div>";
+                                    echo "<div class='p-4 border border-secondary border-top-0 rounded-bottom'>
+                                                <h4>" . $dados['nome_flor'] . "</h4>";
+                                    echo "<div class='d-flex justify-content-between flex-lg-wrap'>
+                                                <p class='text-dark fs-5 fw-bold mb-0'> R$" . $dados['preco_flor'] . "</p>";
+                                    echo "</div>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </div>";
-                                echo "<style>
-                                    .fruite-img img {
-                                        width: 100%;
-                                        height: 300px;
-                                        object-fit: cover;
-                                        border-radius: 8px 8px 0 0;
-                                    }
-                                    </style>";
+                                            </div>";
+                                    echo "<style>
+                                        .fruite-img img {
+                                            width: 100%;
+                                            height: 300px;
+                                            object-fit: cover;
+                                            border-radius: 8px 8px 0 0;
+                                        }
+                                        </style>";
+                                }
+                            } else {
+                                echo "<p class='text-center'>Nenhuma flor encontrada para o termo '<strong>" . htmlspecialchars($pesquisa) . "</strong>'.</p>";
                             }
                             ?>
                         </div>
@@ -58,7 +81,8 @@
         </div>
     </div>
 </div>
-<!-- Fruits Shop End-->
+<!-- Fruits Shop End -->
+
 
 
 <?php
