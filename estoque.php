@@ -87,7 +87,16 @@
             <i class='text-primary'></i> Inserir
         </a>
         <div class="container py-5">
-
+        <!-- Search Form Start -->
+        <div class="row mb-4">
+            <div class="col-12" style="padding-bottom: 50px">
+                <form method="GET" action="" class="d-flex align-items-center justify-content-start">
+                    <input type="text" name="pesquisa" class="form-control me-2 w-50" placeholder="Digite o nome da flor" value="<?php echo isset($_GET['pesquisa']) ? htmlspecialchars($_GET['pesquisa']) : ''; ?>">
+                    <button type="submit" class="btn btn-primary">Pesquisar</button>
+                </form>
+            </div>
+        </div>
+        <!-- Search Form End -->
             <div class="row g-4">
                 <div class="col-lg-12">
                     <div class="row g-4">
