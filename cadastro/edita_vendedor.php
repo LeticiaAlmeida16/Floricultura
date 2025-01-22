@@ -1,5 +1,11 @@
 <?php
     include '../bd/conecta.php';
+
+    //get pega da URL
+    $id = $_GET['id'];
+    $sql = "SELECT * FROM cadastro_vendedor WHERE id_vendedor = '$id'";
+    $consulta = $conexao->query($sql);
+    $dados = $consulta->fetch_assoc();
 ?>
 
 <!DOCTYPE html>
@@ -14,7 +20,7 @@
     <meta name="keywords" content="Colorlib Templates">
 
     <!-- Title Page-->
-    <title>Cadastro de Cliente</title>
+    <title>Editar Vendedor</title>
 
     <!-- Icons font CSS-->
     <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
@@ -39,19 +45,19 @@
     <div class="wrapper wrapper--w680">
         <div class="card card-4">
             <div class="card-body">
-                <h2 class="title">Cadastro de Cliente</h2>
-                <form action="../processos/proc_insere_cliente.php" method="POST">
+                <h2 class="title">Editar Vendedor</h2>
+                <form action="../processos/proc_edita_vendedor.php?id=<?php echo $id; ?>" method="POST">
                     <div class="row row-space">
                         <div class="col-2">
                             <div class="input-group">
                                 <label class="label">Nome</label>
-                                <input class="input--style-4" type="text" name="nome" required>
+                                <input class="input--style-4" type="text" name="nomenovo" value="<?php echo $dados['nome_vendedor']; ?>" required>
                             </div>
                         </div>
                         <div class="col-2">
                             <div class="input-group">
                                 <label class="label">Telefone</label>
-                                <input class="input--style-4" type="text" name="telefone" id="telefone" required>
+                                <input class="input--style-4" type="text" name="telefonenovo" value="<?php echo $dados['telefone_vendedor']; ?>" id="telefone" required>
                             </div>
                         </div>
                     </div>
@@ -59,22 +65,16 @@
                         <div class="col-2">
                             <div class="input-group">
                                 <label class="label">Email</label>
-                                <input class="input--style-4" type="email" name="email" required>
-                            </div>
-                        </div>
-                        <div class="col-2">
-                            <div class="input-group">
-                                <label class="label">Senha</label>
-                                <input class="input--style-4" type="password" name="senha" required>
+                                <input class="input--style-4" type="email" name="emailnovo" value="<?php echo $dados['email_vendedor']; ?>" required>
                             </div>
                         </div>
                     </div>
                     <div class="input-group">
                         <label class="label">CPF</label>
-                        <input class="input--style-4" type="text" name="cpf" id="cpf" required>
+                        <input class="input--style-4" type="text" name="cpfnovo" value="<?php echo $dados['cpf_vendedor']; ?>" id="cpf" required>
                     </div>
                     <div class="p-t-15">
-                        <button class="btn btn--radius-2 btn--pink" type="submit">Criar</button>
+                        <button class="btn btn--radius-2 btn--pink" type="submit">Editar</button>
                     </div>
                 </form>
             </div>

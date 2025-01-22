@@ -14,7 +14,7 @@
     <meta name="keywords" content="Colorlib Templates">
 
     <!-- Title Page-->
-    <title>Cadastro de Cliente</title>
+    <title>Cadastro de Vendedor</title>
 
     <!-- Icons font CSS-->
     <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
@@ -39,8 +39,8 @@
     <div class="wrapper wrapper--w680">
         <div class="card card-4">
             <div class="card-body">
-                <h2 class="title">Cadastro de Cliente</h2>
-                <form action="../processos/proc_insere_cliente.php" method="POST">
+                <h2 class="title">Cadastro de Vendedor</h2>
+                <form action="../processos/proc_insere_vendedor.php" method="POST">
                     <div class="row row-space">
                         <div class="col-2">
                             <div class="input-group">

@@ -34,9 +34,9 @@
 					<img src="images/logo.png" alt="IMG">
 				</div>
 
-				<form  action="../processos/proc_login.php" method="POST" class="login100-form validate-form">
+				<form  action="../processos/proc_loginadm.php" method="POST" class="login100-form validate-form">
 					<span class="login100-form-title">
-						Login
+						ADMINISTRADOR
 					</span>
 
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
@@ -61,20 +61,6 @@
 						</button>
 					</div>
 
-					<div class="container-login100-form-btn">
-						<a href='loginadm.php' class='container-login100-form-btn  btn border border-secondary rounded-pill px-3 text-primary'>
-							<i class='text-primary'>Sou administrador</i> 
-						</a>
-					</div>
-
-					
-
-					<div class="text-center p-t-50">
-						<a class="txt2" href="../cadastro/insere_cliente.php">
-							Crie sua conta
-							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
-						</a>
-					</div>
 				</form>
 			</div>
 		</div>

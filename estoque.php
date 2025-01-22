@@ -1,9 +1,8 @@
 <?php
     include 'bd/conecta.php';
-
     session_start();
 
-    // Verifica se alguma das sessões não está definida
+    //Verifica se alguma das sessões não está definida
     if((!isset($_SESSION['id_vendedor']) == true) && (!isset($_SESSION['cpf']) == true) && (!isset($_SESSION['nome']) == true) && (!isset($_SESSION['email']) == true) && (!isset($_SESSION['tipo']) == true)){
         unset($_SESSION['id_vendedor']);
         unset($_SESSION['cpf']);        
@@ -53,24 +52,27 @@
 <body>
 
     <!-- Navbar start -->
-    <div class="container-fluid fixed-top">
-        <div class="container px-0">
-            <nav class="navbar navbar-light bg-white navbar-expand-xl">
-                <a href="index.php" class="navbar-brand">
-                    <h1 class="text-primary display-6">Luxe Blooms</h1>
-                </a>
-                <button class="navbar-toggler py-2 px-3" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarCollapse">
-                    <span class="fa fa-bars text-primary"></span>
-                </button>
+<div class="container-fluid fixed-top">
+    <div class="container px-0">
+        <nav class="navbar navbar-light bg-white navbar-expand-xl">
+            <a href="index.php" class="navbar-brand">
+                <h1 class="text-primary display-6">Luxe Blooms</h1>
+            </a>
+            <button class="navbar-toggler py-2 px-3" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars text-primary"></span>
+            </button>
+            <div class="d-flex ms-auto">
                 <?php
                 echo "<span class='my-auto text-primary fw-bold'>Bem-vindo(a), " . htmlspecialchars($_SESSION['nome']) . "!
-                    <a href='processos/proc-logout.php' class='btn btn-outline-secondary ms-3 my-auto'>Logout</a>
+                    <a href='processos/proc-logout.php' class='btn btn-outline-secondary ms-2'>Logout</a>
                 </span>";
                 ?>
-            </nav>
-        </div>
+            </div>
+        </nav>
     </div>
+</div>
+
     <!-- Navbar End -->
 
     <!-- Single Page Header start -->
@@ -85,7 +87,16 @@
             <i class='text-primary'></i> Inserir
         </a>
         <div class="container py-5">
-
+        <!-- Search Form Start -->
+        <div class="row mb-4">
+            <div class="col-12" style="padding-bottom: 50px">
+                <form method="GET" action="" class="d-flex align-items-center justify-content-start">
+                    <input type="text" name="pesquisa" class="form-control me-2 w-50" placeholder="Digite o nome da flor" value="<?php echo isset($_GET['pesquisa']) ? htmlspecialchars($_GET['pesquisa']) : ''; ?>">
+                    <button type="submit" class="btn btn-primary">Pesquisar</button>
+                </form>
+            </div>
+        </div>
+        <!-- Search Form End -->
             <div class="row g-4">
                 <div class="col-lg-12">
                     <div class="row g-4">
@@ -137,11 +148,6 @@
         </div>
     </div>
     <!-- Fruits Shop End-->
-
-
-    <?php
-    include 'footer.php';
-    ?>
 
     <!-- Back to Top -->
     <a href="#" class="btn btn-primary border-3 border-primary rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>
